@@ -1,6 +1,7 @@
 package main
 
 import (
+	"github.com/Kugelschieber/schnittfest/pages"
 	"github.com/emvi/logbuch"
 	"github.com/gorilla/mux"
 	"github.com/rs/cors"
@@ -23,6 +24,7 @@ const (
 
 func configureLog() {
 	logbuch.Info("Configure logging...")
+	logbuch.SetFormatter(logbuch.NewFieldFormatter("", "\t"))
 	level := strings.ToLower(os.Getenv("SCHNITTFEST_LOGLEVEL"))
 
 	if level == "debug" {
@@ -45,20 +47,21 @@ func logEnvConfig() {
 
 func setupRouter() *mux.Router {
 	router := mux.NewRouter()
-	router.PathPrefix(staticDirPrefix).Handler(http.StripPrefix(staticDirPrefix, http.FileServer(http.Dir(staticDir))))
+	router.PathPrefix(staticDirPrefix).Handler(http.StripPrefix(staticDirPrefix, http.FileServer(http.Dir(staticDir)))).Methods("GET")
+	router.HandleFunc("/", pages.LandingPageHandler).Methods("GET")
 	return router
 }
 
 func configureCors(router *mux.Router) http.Handler {
 	logbuch.Info("Configuring CORS...")
 
-	origins := strings.Split(os.Getenv("ACCWEB_ALLOWED_ORIGINS"), ",")
+	origins := strings.Split(os.Getenv("SCHNITTFEST_ALLOWED_ORIGINS"), ",")
 	c := cors.New(cors.Options{
 		AllowedOrigins:   origins,
 		AllowedMethods:   []string{"GET", "POST", "PUT", "DELETE"},
 		AllowedHeaders:   []string{"*"},
 		AllowCredentials: true,
-		Debug:            strings.ToLower(os.Getenv("ACCWEB_CORS_LOGLEVEL")) == "debug",
+		Debug:            strings.ToLower(os.Getenv("SCHNITTFEST_CORS_LOGLEVEL")) == "debug",
 	})
 	return c.Handler(router)
 }
@@ -70,16 +73,16 @@ func start(handler http.Handler) {
 	readTimeout := defaultHttpReadTimeout
 	var err error
 
-	if os.Getenv("ACCWEB_HTTP_WRITE_TIMEOUT") != "" {
-		writeTimeout, err = strconv.Atoi(os.Getenv("ACCWEB_HTTP_WRITE_TIMEOUT"))
+	if os.Getenv("SCHNITTFEST_HTTP_WRITE_TIMEOUT") != "" {
+		writeTimeout, err = strconv.Atoi(os.Getenv("SCHNITTFEST_HTTP_WRITE_TIMEOUT"))
 
 		if err != nil {
 			logbuch.Fatal(err.Error())
 		}
 	}
 
-	if os.Getenv("ACCWEB_HTTP_READ_TIMEOUT") != "" {
-		readTimeout, err = strconv.Atoi(os.Getenv("ACCWEB_HTTP_READ_TIMEOUT"))
+	if os.Getenv("SCHNITTFEST_HTTP_READ_TIMEOUT") != "" {
+		readTimeout, err = strconv.Atoi(os.Getenv("SCHNITTFEST_HTTP_READ_TIMEOUT"))
 
 		if err != nil {
 			logbuch.Fatal(err.Error())
@@ -90,15 +93,15 @@ func start(handler http.Handler) {
 
 	server := &http.Server{
 		Handler:      handler,
-		Addr:         os.Getenv("ACCWEB_HOST"),
+		Addr:         os.Getenv("SCHNITTFEST_HOST"),
 		WriteTimeout: time.Duration(writeTimeout) * time.Second,
 		ReadTimeout:  time.Duration(readTimeout) * time.Second,
 	}
 
 	// TODO certmagic
-	if strings.ToLower(os.Getenv("ACCWEB_TLS_ENABLE")) == "true" {
+	if strings.ToLower(os.Getenv("SCHNITTFEST_TLS_ENABLE")) == "true" {
 		logbuch.Info("TLS enabled")
-		logbuch.Fatal("Error starting server", server.ListenAndServeTLS(os.Getenv("ACCWEB_TLS_CERT"), os.Getenv("ACCWEB_TLS_PKEY")))
+		logbuch.Fatal("Error starting server", server.ListenAndServeTLS(os.Getenv("SCHNITTFEST_TLS_CERT"), os.Getenv("SCHNITTFEST_TLS_PKEY")))
 	} else {
 		logbuch.Fatal("Error starting server", server.ListenAndServe())
 	}
@@ -107,6 +110,7 @@ func start(handler http.Handler) {
 func main() {
 	configureLog()
 	logEnvConfig()
+	pages.LoadTemplates()
 	router := setupRouter()
 	corsConfig := configureCors(router)
 	start(corsConfig)

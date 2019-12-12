@@ -1,3 +1,5 @@
+github.com/emvi/iso-639-1 v0.0.0-20190602002026-5ad2c26993cd h1:x5d+Ikfu2nrNXdC8WThAdCcdajxG4JKqCkLpqAFqmpc=
+github.com/emvi/iso-639-1 v0.0.0-20190602002026-5ad2c26993cd/go.mod h1:mghC4MDFyszxzH98ujf/K5whvB6B0nV4qCa5u94dP84=
 github.com/emvi/logbuch v0.0.0-20191002134629-fd76a46de20c h1:LsG8/aichRG7oGqTz77PQJuArY1id0kQttxNBuC/C3Q=
 github.com/emvi/logbuch v0.0.0-20191002134629-fd76a46de20c/go.mod h1:J2Wgbr3BuSc1JO+D2MBVh6q3WPVSK5GzktwWz8pvkKw=
 github.com/gorilla/mux v1.7.3 h1:gnP5JzjVOuiZD07fKKToCAOjS0yOpj/qPETTXCCS6hw=
