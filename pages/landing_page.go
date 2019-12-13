@@ -7,9 +7,7 @@ import (
 )
 
 var landingPageI18n = map[string]map[string]string{
-	"de": {
-		"test": "Hello World",
-	},
+	"de": {},
 }
 
 func LandingPageHandler(w http.ResponseWriter, r *http.Request) {
