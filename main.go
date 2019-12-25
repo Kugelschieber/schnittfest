@@ -4,6 +4,7 @@ import (
 	"github.com/Kugelschieber/schnittfest/pages"
 	"github.com/emvi/logbuch"
 	"github.com/gorilla/mux"
+	"github.com/mholt/certmagic"
 	"github.com/rs/cors"
 	"net/http"
 	"os"
@@ -47,8 +48,17 @@ func logEnvConfig() {
 
 func setupRouter() *mux.Router {
 	router := mux.NewRouter()
-	router.PathPrefix(staticDirPrefix).Handler(http.StripPrefix(staticDirPrefix, http.FileServer(http.Dir(staticDir)))).Methods("GET")
+
+	// static content
+	fs := http.StripPrefix(staticDirPrefix, http.FileServer(http.Dir(staticDir)))
+	router.PathPrefix(staticDirPrefix).HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		w.Header().Add("Cache-Control", "max-age=3600")
+		fs.ServeHTTP(w, r)
+	}).Methods("GET")
+
+	// pages
 	router.HandleFunc("/", pages.LandingPageHandler).Methods("GET")
+
 	return router
 }
 
@@ -98,10 +108,9 @@ func start(handler http.Handler) {
 		ReadTimeout:  time.Duration(readTimeout) * time.Second,
 	}
 
-	// TODO certmagic
 	if strings.ToLower(os.Getenv("SCHNITTFEST_TLS_ENABLE")) == "true" {
 		logbuch.Info("TLS enabled")
-		logbuch.Fatal("Error starting server", server.ListenAndServeTLS(os.Getenv("SCHNITTFEST_TLS_CERT"), os.Getenv("SCHNITTFEST_TLS_PKEY")))
+		logbuch.Fatal("Error starting server", certmagic.HTTPS([]string{os.Getenv("SCHNITTFEST_DOMAIN_NAME")}, handler))
 	} else {
 		logbuch.Fatal("Error starting server", server.ListenAndServe())
 	}
