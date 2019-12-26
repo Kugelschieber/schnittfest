@@ -78,7 +78,6 @@ func configureCors(router *mux.Router) http.Handler {
 
 func start(handler http.Handler) {
 	logbuch.Info("Starting server...")
-
 	writeTimeout := defaultHttpWriteTimeout
 	readTimeout := defaultHttpReadTimeout
 	var err error
@@ -110,7 +109,7 @@ func start(handler http.Handler) {
 
 	if strings.ToLower(os.Getenv("SCHNITTFEST_TLS_ENABLE")) == "true" {
 		logbuch.Info("TLS enabled")
-		logbuch.Fatal("Error starting server", certmagic.HTTPS([]string{os.Getenv("SCHNITTFEST_DOMAIN_NAME")}, handler))
+		logbuch.Fatal("Error starting server", certmagic.HTTPS(strings.Split(os.Getenv("SCHNITTFEST_DOMAIN_NAME"), ","), handler))
 	} else {
 		logbuch.Fatal("Error starting server", server.ListenAndServe())
 	}

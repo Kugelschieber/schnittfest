@@ -27,10 +27,11 @@ RUN apk update && \
 COPY --from=build /app /app
 WORKDIR /app
 
-RUN addgroup -S appuser && \
-    adduser -S -G appuser appuser && \
-    chown -R appuser:appuser /app
-USER appuser
+# use root to bind port 80 and 443
+#RUN addgroup -S appuser && \
+#    adduser -S -G appuser appuser && \
+#    chown -R appuser:appuser /app
+#USER appuser
 
 # default config
 ENV SCHNITTFEST_HOST=0.0.0.0:80
@@ -38,6 +39,7 @@ ENV SCHNITTFEST_LOGLEVEL=info
 ENV SCHNITTFEST_ALLOWED_ORIGINS=*
 ENV SCHNITTFEST_HTTP_WRITE_TIMEOUT=5
 ENV SCHNITTFEST_HTTP_READ_TIMEOUT=5
+ENV SCHNITTFEST_DOMAIN_NAME=schnittfest.gmbh,www.schnittfest.gmbh
 
 # run
 EXPOSE 80
