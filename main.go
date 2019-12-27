@@ -14,13 +14,17 @@ import (
 )
 
 const (
-	staticDir       = "public/static"
+	staticDir       = "static"
 	staticDirPrefix = "/static/"
 	envPrefix       = "SCHNITTFEST_"
 	pwdString       = "PASSWORD" // do not log passwords!
 
 	defaultHttpWriteTimeout = 20
 	defaultHttpReadTimeout  = 20
+)
+
+var (
+	disableCache = strings.ToLower(os.Getenv("SCHNITTFEST_DISABLE_CACHE")) == "true"
 )
 
 func configureLog() {
@@ -52,7 +56,10 @@ func setupRouter() *mux.Router {
 	// static content
 	fs := http.StripPrefix(staticDirPrefix, http.FileServer(http.Dir(staticDir)))
 	router.PathPrefix(staticDirPrefix).HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-		w.Header().Add("Cache-Control", "max-age=3600")
+		if !disableCache {
+			w.Header().Add("Cache-Control", "max-age=3600")
+		}
+
 		fs.ServeHTTP(w, r)
 	}).Methods("GET")
 
