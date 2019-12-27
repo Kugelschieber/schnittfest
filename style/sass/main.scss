@@ -1,4 +1,235 @@
-html, body {
-    font-family: sans-serif;
-    font-size: 40px;
+@import "_reset.scss";
+@import "_grid.scss";
+
+html {
+    background-color: black;
+    font-family: "Manrope", -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+
+    --beige: #F7EEE0;
+    --yellow: #FEBB28;
+    --orange: #FE6732;
+    --red: #F5303C;
+    --pink: #CE2867;
+    --purple: #571B47;
+}
+
+h1, h2, h3, p {
+    margin-block-start: 0;
+    margin-block-end: 0;
+}
+
+h1, h2, h3 {
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -2%;
+}
+
+h1 {
+    font-size: 80px;
+}
+
+h2 {
+    font-size: 64px;
+}
+
+h3 {
+    font-size: 48px;
+}
+
+p {
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 1.4;
+}
+
+button {
+    font-size: 18px;
+    font-weight: 600;
+    padding: 23px 32px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.bg { // background
+    &-white {
+        background-color: white;
+    }
+
+    &-beige {
+        background-color: var(--beige);
+    }
+
+    &-yellow {
+        background-color: var(--yellow);
+    }
+
+    &-orange {
+        background-color: var(--orange);
+    }
+
+    &-red {
+        background-color: var(--red);
+    }
+
+    &-pink {
+        background-color: var(--pink);
+    }
+
+    &-purple {
+        background-color: var(--purple);
+    }
+
+    &-black {
+        background-color: black;
+    }
+}
+
+.p { // padding
+    &-t, &-b { // top
+        &-l { // large
+            padding-top: 256px;
+        }
+    }
+
+    &-b { // bottom
+        &-l { // large
+            padding-bottom: 256px;
+        }
+    }
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 96px;
+    color: white;
+    z-index: 100;
+
+    .container {
+        height: 100%;
+        display: flex;
+        align-items: center;
+
+        img {
+            cursor: pointer;
+        }
+
+        ul {
+            display: flex;
+            flex: 1;
+            justify-content: flex-end;
+            text-align: right;
+
+            li {
+                margin-left: 64px;
+                font-size: 18px;
+                font-weight: 600;
+                cursor: pointer;
+                transition: color 0.2s ease-in-out;
+
+                &:nth-of-type(1):hover {
+                    color: var(--yellow);
+                }
+
+                &:nth-of-type(2):hover {
+                    color: var(--orange);
+                }
+
+                &:nth-of-type(3):hover {
+                    color: var(--red);
+                }
+
+                &:nth-of-type(4):hover {
+                    color: var(--pink);
+                }
+            }
+        }
+    }
+}
+
+.section-start {
+    .hero {
+        max-height: 320px;
+        padding-right: 64px;
+    }
+
+    h1 {
+        height: 192px;
+        max-height: 192px;
+        margin-bottom: 64px;
+        color: white;
+    }
+
+    button.primary {
+        color: black;
+        background-color: var(--yellow);
+        margin-right: 32px;
+
+        &:hover {
+            background-color: var(--orange);
+        }
+    }
+
+    button.secondary {
+        color: var(--yellow);
+        background-color: var(--purple);
+
+        &:hover {
+            background-color: var(--pink);
+        }
+    }
+
+    .stripe {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+    
+        div {
+            height: 64px;
+            width: 100%;
+        }
+    }
+}
+
+.section-work {
+    h2 {
+        position: sticky;
+        top: 256px;
+        color: white;
+        writing-mode: vertical-lr;
+        -webkit-text-orientation: mixed;
+        text-orientation: mixed
+    }
+
+    .videos > div {
+        margin-bottom: 64px;
+
+        &:last-of-type {
+            margin: 0;
+        }
+    }
+}
+
+.section-service {
+    .square {
+        padding: 64px;
+    }
+
+    h3 {
+        color: white;
+        margin-bottom: 32px;
+    }
+
+    button {
+        display: inline-flex;
+        color: white;
+        background-color: var(--purple);
+        margin-top: 64px;
+
+        &:hover {
+            background-color: var(--pink);
+        }
+    }
 }
