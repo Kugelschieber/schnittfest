@@ -5,6 +5,7 @@ import (
 	"github.com/emvi/logbuch"
 	"os"
 	"path/filepath"
+	"strings"
 )
 
 const (
@@ -18,7 +19,7 @@ var (
 )
 
 func LoadTemplates() {
-	tplCache = util.NewTemplateCache()
+	tplCache = util.NewTemplateCache(strings.ToLower(os.Getenv("SCHNITTFEST_HOT_RELOAD")) == "true")
 	templateBase := os.Getenv("SCHNITTFEST_TEMPLATE_BASE")
 
 	if templateBase == "" {
