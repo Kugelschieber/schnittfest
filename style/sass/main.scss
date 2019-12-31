@@ -13,6 +13,10 @@ html {
     --purple: #571B47;
 }
 
+body {
+    overflow-x: hidden;
+}
+
 h1, h2, h3, p {
     margin-block-start: 0;
     margin-block-end: 0;
@@ -85,15 +89,15 @@ button {
 }
 
 .p { // padding
-    &-t, &-b { // top
+    &-t { // top
         &-l { // large
-            padding-top: 256px;
+            padding-top: 192px;
         }
     }
 
     &-b { // bottom
         &-l { // large
-            padding-bottom: 256px;
+            padding-bottom: 192px;
         }
     }
 }
@@ -173,7 +177,7 @@ button {
     }
 
     button.secondary {
-        color: var(--yellow);
+        color: var(--beige);
         background-color: var(--purple);
 
         &:hover {
@@ -230,6 +234,247 @@ button {
 
         &:hover {
             background-color: var(--pink);
+        }
+    }
+}
+
+.section-rental {
+    overflow: hidden;
+
+    .parts {
+        position: relative;
+        max-width: 720px;
+        min-height: 256px;
+        margin: 0 auto;
+
+        img:not(#part0) {
+            position: absolute;
+            filter: contrast(1.3) saturate(0.6) sepia(0.1);
+        }
+
+        #part0 {
+            width: 100%;
+        }
+
+        #part1 {
+            width: 29%;
+            left: 34%;
+        }
+    
+        #part2 {
+            width: 8.5%;
+            left: 24%;
+            margin-top: 2%;
+        }
+
+        #part3 {
+            width: 19%;
+            left: 0;
+            margin-top: 2%;
+        }
+
+        #part4 {
+            width: 17%;
+            left: 2%;
+            margin-top: 15%;
+        }
+
+        #part5 {
+            width: 5.5%;
+            left: 70%;
+            margin-top: 9%;
+        }
+
+        #part6 {
+            width: 22%;
+            left: 64%;
+            margin-top: 1%;
+        }
+
+        #part7 {
+            width: 12.5%;
+            left: 87.5%;
+            margin-top: 1%;
+        }
+
+        #part8 {
+            width: 37%;
+            left: 30%;
+            margin-top: 28%;
+        }
+
+        #part9 {
+            width: 22.5%;
+            left: 0;
+            margin-top: 28%;
+        }
+
+        #part10 {
+            width: 49%;
+            left: 20%;
+            margin-top: 40%;
+        }
+
+        #part11 {
+            width: 14%;
+            left: 2%;
+            margin-top: 36%;
+        }
+
+        #part12 {
+            width: 27%;
+            left: 72%;
+            margin-top: 31%;
+        }
+
+        #part13 {
+            width: 24%;
+            left: 48%;
+            margin-top: 48%;
+        }
+
+        #part14 {
+            width: 19%;
+            left: 24%;
+            margin-top: 48%;
+        }
+
+        #part15 {
+            width: 4.5%;
+            left: 15%;
+            margin-top: 47%;
+        }
+
+        #part16 {
+            width: 24%;
+            left: 75%;
+            margin-top: 48%;
+        }
+
+        #part17 {
+            width: 7.5%;
+            left: 2%;
+            margin-top: 44%;
+        }
+
+        #part18-1 {
+            width: 14%;
+            left: 46%;
+            margin-top: 72%;
+        }
+
+        #part18-2 {
+            width: 14%;
+            left: 46%;
+            margin-top: 86%;
+        }
+
+        #part19-1 {
+            width: 17%;
+            left: 22%;
+            margin-top: 70%;
+        }
+
+        #part19-2 {
+            width: 17%;
+            left: 22%;
+            margin-top: 84%;
+        }
+
+        #part20 {
+            width: 13.5%;
+            left: 66%;
+            margin-top: 73%;
+        }
+
+        #part21 {
+            width: 11.5%;
+            left: 6%;
+            margin-top: 73%;
+        }
+
+        #part22 {
+            width: 13.5%;
+            left: 84%;
+            margin-top: 73%;
+        }
+
+        #part23 {
+            width: 28%;
+            left: 22%;
+            margin-top: 102%;
+        }
+
+        #part24 {
+            width: 37.5%;
+            left: 60%;
+            margin-top: 100%;
+        }
+
+        #part25 {
+            width: 20%;
+            left: 14%;
+            margin-top: 105%;
+        }
+
+        #part26 {
+            width: 40%;
+            left: 43%;
+            margin-top: 106%;
+        }
+
+        #part27 {
+            width: 22.5%;
+            left: 20%;
+            margin-top: 115%;
+        }
+
+        #part28 {
+            width: 22%;
+            left: 47%;
+            margin-top: 130%;
+        }
+
+        #part29-1 {
+            width: 3%;
+            left: 4%;
+            margin-top: 106%;
+        }
+
+        #part29-2 {
+            width: 3%;
+            left: 8%;
+            margin-top: 106%;
+        }
+
+        #part30 {
+            width: 19%;
+            left: 70%;
+            margin-top: 116%;
+        }
+
+        #part31-1 {
+            width: 2.5%;
+            left: 13%;
+            margin-top: 125.5%;
+        }
+
+        #part31-2 {
+            width: 2.5%;
+            left: 16%;
+            margin-top: 125.5%;
+        }
+
+        #part32-1 {
+            width: 2.75%;
+            left: 20%;
+            margin-top: 126%;
+        }
+
+        #part32-2 {
+            width: 2.75%;
+            left: 24%;
+            margin-top: 126%;
         }
     }
 }

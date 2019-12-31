@@ -16,6 +16,8 @@ import (
 const (
 	staticDir       = "static"
 	staticDirPrefix = "/static/"
+	jsDir       	= "js"
+	jsDirPrefix 	= "/js/"
 	envPrefix       = "SCHNITTFEST_"
 	pwdString       = "PASSWORD" // do not log passwords!
 
@@ -61,6 +63,16 @@ func setupRouter() *mux.Router {
 		}
 
 		fs.ServeHTTP(w, r)
+	}).Methods("GET")
+
+	// js
+	js := http.StripPrefix(jsDirPrefix, http.FileServer(http.Dir(jsDir)))
+	router.PathPrefix(jsDirPrefix).HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		if !disableCache {
+			w.Header().Add("Cache-Control", "max-age=3600")
+		}
+
+		js.ServeHTTP(w, r)
 	}).Methods("GET")
 
 	// pages
