@@ -8,7 +8,7 @@ var part2 = new TweenMax.from("#part2", 1, {
 });
 
 var part2Scene = new ScrollMagic.Scene({
-    triggerElement: "#rental",
+    triggerElement: "#parts",
     duration: 250,
 })
 .setTween(part2)
@@ -20,7 +20,7 @@ var part3 = new TweenMax.from("#part3", 1, {
 });
 
 var part3Scene = new ScrollMagic.Scene({
-    triggerElement: "#rental",
+    triggerElement: "#parts",
     duration: 250,
     offset: this.offset
 })
@@ -35,7 +35,7 @@ var part4 = new TweenMax.from("#part4", 1, {
 });
 
 var part4Scene = new ScrollMagic.Scene({
-    triggerElement: "#rental",
+    triggerElement: "#parts",
     duration: 250,
     offset: 2*this.offset
 })
@@ -48,7 +48,7 @@ var part5 = new TweenMax.from("#part5", 1, {
 });
 
 var part5Scene = new ScrollMagic.Scene({
-    triggerElement: "#rental",
+    triggerElement: "#parts",
     duration: 250
 })
 .setTween(part5)
@@ -60,7 +60,7 @@ var part6 = new TweenMax.from("#part6", 1, {
 });
 
 var part6Scene = new ScrollMagic.Scene({
-    triggerElement: "#rental",
+    triggerElement: "#parts",
     duration: 250,
     offset: 3*this.offset
 })
@@ -73,7 +73,7 @@ var part7 = new TweenMax.from("#part7", 1, {
 });
 
 var part7Scene = new ScrollMagic.Scene({
-    triggerElement: "#rental",
+    triggerElement: "#parts",
     duration: 250,
     offset: 4*this.offset
 })
@@ -88,7 +88,7 @@ var part8 = new TweenMax.from("#part8", 1, {
 });
 
 var part8Scene = new ScrollMagic.Scene({
-    triggerElement: "#rental",
+    triggerElement: "#parts",
     duration: 250,
     offset: 5*this.offset
 })
@@ -103,7 +103,7 @@ var part9 = new TweenMax.from("#part9", 1, {
 });
 
 var part9Scene = new ScrollMagic.Scene({
-    triggerElement: "#rental",
+    triggerElement: "#parts",
     duration: 250,
     offset: 5*this.offset
 })
@@ -118,7 +118,7 @@ var part10 = new TweenMax.from("#part10", 1, {
 });
 
 var part10Scene = new ScrollMagic.Scene({
-    triggerElement: "#rental",
+    triggerElement: "#parts",
     duration: 250,
     offset: 6*this.offset
 })
@@ -133,7 +133,7 @@ var part11 = new TweenMax.from("#part11", 1, {
 });
 
 var part11Scene = new ScrollMagic.Scene({
-    triggerElement: "#rental",
+    triggerElement: "#parts",
     duration: 250,
     offset: 7*this.offset
 })
@@ -148,7 +148,7 @@ var part12 = new TweenMax.from("#part12", 1, {
 });
 
 var part12Scene = new ScrollMagic.Scene({
-    triggerElement: "#rental",
+    triggerElement: "#parts",
     duration: 250,
     offset: 8*this.offset
 })
@@ -163,7 +163,7 @@ var part13 = new TweenMax.from("#part13", 1, {
 });
 
 var part13Scene = new ScrollMagic.Scene({
-    triggerElement: "#rental",
+    triggerElement: "#parts",
     duration: 250,
     offset: 9*this.offset
 })
@@ -178,7 +178,7 @@ var part14 = new TweenMax.from("#part14", 1, {
 });
 
 var part14Scene = new ScrollMagic.Scene({
-    triggerElement: "#rental",
+    triggerElement: "#parts",
     duration: 250,
     offset: 10*this.offset
 })
@@ -193,7 +193,7 @@ var part15 = new TweenMax.from("#part15", 1, {
 });
 
 var part15Scene = new ScrollMagic.Scene({
-    triggerElement: "#rental",
+    triggerElement: "#parts",
     duration: 250,
     offset: 11*this.offset
 })
@@ -208,7 +208,7 @@ var part16 = new TweenMax.from("#part16", 1, {
 });
 
 var part16Scene = new ScrollMagic.Scene({
-    triggerElement: "#rental",
+    triggerElement: "#parts",
     duration: 250,
     offset: 12*this.offset
 })
@@ -223,7 +223,7 @@ var part17 = new TweenMax.from("#part17", 1, {
 });
 
 var part17Scene = new ScrollMagic.Scene({
-    triggerElement: "#rental",
+    triggerElement: "#parts",
     duration: 250,
     offset: 13*this.offset
 })
@@ -238,7 +238,7 @@ var part181 = new TweenMax.from("#part18-1", 1, {
 });
 
 var part181Scene = new ScrollMagic.Scene({
-    triggerElement: "#rental",
+    triggerElement: "#parts",
     duration: 250,
     offset: 14*this.offset
 })
@@ -253,7 +253,7 @@ var part182 = new TweenMax.from("#part18-2", 1, {
 });
 
 var part182Scene = new ScrollMagic.Scene({
-    triggerElement: "#rental",
+    triggerElement: "#parts",
     duration: 250,
     offset: 15*this.offset
 })
@@ -268,7 +268,7 @@ var part191 = new TweenMax.from("#part19-1", 1, {
 });
 
 var part191Scene = new ScrollMagic.Scene({
-    triggerElement: "#rental",
+    triggerElement: "#parts",
     duration: 250,
     offset: 16*this.offset
 })
@@ -283,7 +283,7 @@ var part192 = new TweenMax.from("#part19-2", 1, {
 });
 
 var part192Scene = new ScrollMagic.Scene({
-    triggerElement: "#rental",
+    triggerElement: "#parts",
     duration: 250,
     offset: 18*this.offset
 })
@@ -298,7 +298,7 @@ var part20 = new TweenMax.from("#part20", 1, {
 });
 
 var part20Scene = new ScrollMagic.Scene({
-    triggerElement: "#rental",
+    triggerElement: "#parts",
     duration: 250,
     offset: 19*this.offset
 })
@@ -313,7 +313,7 @@ var part21 = new TweenMax.from("#part21", 1, {
 });
 
 var part21Scene = new ScrollMagic.Scene({
-    triggerElement: "#rental",
+    triggerElement: "#parts",
     duration: 250,
     offset: 20*this.offset
 })
@@ -328,7 +328,7 @@ var part22 = new TweenMax.from("#part22", 1, {
 });
 
 var part22Scene = new ScrollMagic.Scene({
-    triggerElement: "#rental",
+    triggerElement: "#parts",
     duration: 250,
     offset: 21*this.offset
 })
@@ -343,7 +343,7 @@ var part23 = new TweenMax.from("#part23", 1, {
 });
 
 var part23Scene = new ScrollMagic.Scene({
-    triggerElement: "#rental",
+    triggerElement: "#parts",
     duration: 250,
     offset: 22*this.offset
 })
@@ -358,7 +358,7 @@ var part24 = new TweenMax.from("#part24", 1, {
 });
 
 var part24Scene = new ScrollMagic.Scene({
-    triggerElement: "#rental",
+    triggerElement: "#parts",
     duration: 250,
     offset: 23*this.offset
 })
@@ -373,7 +373,7 @@ var part25 = new TweenMax.from("#part25", 1, {
 });
 
 var part25Scene = new ScrollMagic.Scene({
-    triggerElement: "#rental",
+    triggerElement: "#parts",
     duration: 250,
     offset: 24*this.offset
 })
@@ -388,7 +388,7 @@ var part26 = new TweenMax.from("#part26", 1, {
 });
 
 var part26Scene = new ScrollMagic.Scene({
-    triggerElement: "#rental",
+    triggerElement: "#parts",
     duration: 250,
     offset: 25*this.offset
 })
@@ -403,7 +403,7 @@ var part27 = new TweenMax.from("#part27", 1, {
 });
 
 var part27Scene = new ScrollMagic.Scene({
-    triggerElement: "#rental",
+    triggerElement: "#parts",
     duration: 250,
     offset: 26*this.offset
 })
@@ -418,7 +418,7 @@ var part28 = new TweenMax.from("#part28", 1, {
 });
 
 var part28Scene = new ScrollMagic.Scene({
-    triggerElement: "#rental",
+    triggerElement: "#parts",
     duration: 250,
     offset: 33*this.offset
 })
@@ -433,7 +433,7 @@ var part291 = new TweenMax.from("#part29-1", 1, {
 });
 
 var part291Scene = new ScrollMagic.Scene({
-    triggerElement: "#rental",
+    triggerElement: "#parts",
     duration: 250,
     offset: 32*this.offset
 })
@@ -448,7 +448,7 @@ var part292 = new TweenMax.from("#part29-2", 1, {
 });
 
 var part292Scene = new ScrollMagic.Scene({
-    triggerElement: "#rental",
+    triggerElement: "#parts",
     duration: 250,
     offset: 31*this.offset
 })
@@ -463,7 +463,7 @@ var part30 = new TweenMax.from("#part30", 1, {
 });
 
 var part30Scene = new ScrollMagic.Scene({
-    triggerElement: "#rental",
+    triggerElement: "#parts",
     duration: 250,
     offset: 34*this.offset
 })
@@ -478,7 +478,7 @@ var part311 = new TweenMax.from("#part31-1", 1, {
 });
 
 var part311Scene = new ScrollMagic.Scene({
-    triggerElement: "#rental",
+    triggerElement: "#parts",
     duration: 250,
     offset: 30*this.offset
 })
@@ -493,7 +493,7 @@ var part312 = new TweenMax.from("#part31-2", 1, {
 });
 
 var part312Scene = new ScrollMagic.Scene({
-    triggerElement: "#rental",
+    triggerElement: "#parts",
     duration: 250,
     offset: 29*this.offset
 })
@@ -508,7 +508,7 @@ var part321 = new TweenMax.from("#part32-1", 1, {
 });
 
 var part321Scene = new ScrollMagic.Scene({
-    triggerElement: "#rental",
+    triggerElement: "#parts",
     duration: 250,
     offset: 28*this.offset
 })
@@ -523,7 +523,7 @@ var part322 = new TweenMax.from("#part32-2", 1, {
 });
 
 var part322Scene = new ScrollMagic.Scene({
-    triggerElement: "#rental",
+    triggerElement: "#parts",
     duration: 250,
     offset: 27*this.offset
 })

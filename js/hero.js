@@ -2,7 +2,7 @@ var x = window.screen.width > 512 ? 160 : 80;
 
 var controller = new ScrollMagic.Controller();
 
-var hero = new TweenMax.from("#hero", 1, {
+var hero = new TweenMax.to("#hero", 1, {
     x: this.x,
     ease: Power1.easeOut
 });
