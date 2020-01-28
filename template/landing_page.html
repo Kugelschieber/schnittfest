@@ -45,15 +45,27 @@
             </div>
         </div>
     </section>
+
+    <nav id="mobileMenu" class="mobile-menu show-sm" style="display:none">
+        <ul>
+            <li class="scrollToService">Leistungen</li>
+            <li class="scrollToWork">Referenzen</li>
+            <li class="scrollToRental">Rental</li>
+            <li>Kontakt</li>
+        </ul>
+    </nav>
     
     <nav class="header bg-black">
         <div class="container" data-aos="fade-in" data-aos-delay="50">
-            <img src="static/wordmark-white.svg" alt="Schnittfest">
+            <img id="homeLink" src="static/wordmark-white.svg" alt="Schnittfest">
             <ul class="hide-sm">
-                <li>Leistungen</li>
-                <li>Referenzen</li>
-                <li>Rental</li>
+                <li class="scrollToService">Leistungen</li>
+                <li class="scrollToWork">Referenzen</li>
+                <li class="scrollToRental">Rental</li>
                 <li>Kontakt</li>
+            </ul>
+            <ul class="show-sm">
+                <li id="mobileMenuOpen">Menü</li>
             </ul>
         </div>
     </nav>
@@ -197,6 +209,66 @@
             easing: "cubic-bezier(0.4, 0.0, 0.2, 1)",
             once: true,
             offset: 32
+        });
+
+        // navbar mobile menu
+        let mobileMenu = document.getElementById("mobileMenu");
+        let mobileMenuOpen = document.getElementById("mobileMenuOpen");
+        let mobileMenuClose = document.getElementById("mobileMenuClose");
+
+        function toggleMobileMenu() {
+            let hidden = mobileMenu.style.display;
+
+            if(hidden) {
+                mobileMenu.style.display = "";
+            } else {
+                mobileMenu.style.display = "none"
+            }
+        }
+
+        mobileMenuOpen.addEventListener("click", e => {
+            e.preventDefault();
+            e.stopPropagation();
+            toggleMobileMenu();
+        });
+
+        // scroll to from navigation
+        let scrollToService = document.getElementsByClassName("scrollToService");
+        let scrollToWork = document.getElementsByClassName("scrollToWork");
+        let scrollToRental = document.getElementsByClassName("scrollToRental");
+
+        function addScrollTo(nodes, anchor) {
+            for (let node of nodes) {
+                node.addEventListener("click", () => {
+                    toggleMobileMenu();
+                    let section = document.getElementById(anchor);
+
+                    if (window.location.pathname === "/") {
+                        window.scrollTo({top: section.offsetTop, behavior: "smooth"});
+                    } else {
+                        window.location = `/#${anchor}`;
+                    }
+                });
+            }
+        }
+
+        addScrollTo(scrollToService, "service");
+        addScrollTo(scrollToWork, "work");
+        addScrollTo(scrollToRental, "rental");
+
+        // click on logo navigation
+        let homeLink = document.getElementById("homeLink");
+
+        homeLink.addEventListener("click", e => {
+            e.preventDefault();
+            e.stopPropagation();
+
+            if(window.location.pathname === "/") {
+                window.scrollTo({top: 0, behavior: "smooth"});
+            }
+            else {
+                window.location = "/";
+            }
         });
     </script>
 </body>

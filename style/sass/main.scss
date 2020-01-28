@@ -158,6 +158,28 @@ button {
     }
 }
 
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+
+    li {
+        color: white;
+        font-size: 24px;
+        line-height: 64px;
+        font-weight: 600;
+        text-align: center;
+        cursor: pointer;
+    }
+}
+
 .section-start {
     .container {
         padding: 0;
