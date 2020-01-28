@@ -133,8 +133,10 @@
 
     <section id="instagram" class="section-instagram bg-black">
         <div class="container">
-            <iframe src="//lightwidget.com/widgets/120f6220e1895e639660c488bda317d2.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width:100%;border:0;overflow:hidden;"></iframe>    </section>
+            <iframe src="//lightwidget.com/widgets/120f6220e1895e639660c488bda317d2.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width:100%;border:0;overflow:hidden;"></iframe>
         </div>
+    </section>
+    
     <section id="rental" class="section-rental bg-beige">
         <div class="container">
             <div class="row">
@@ -251,6 +253,12 @@
                 });
             }
         }
+
+        document.addEventListener("click", e => {
+            if(!mobileMenu.style.display) {
+                mobileMenu.style.display = "none"
+            }
+        });
 
         addScrollTo(scrollToService, "service");
         addScrollTo(scrollToWork, "work");
