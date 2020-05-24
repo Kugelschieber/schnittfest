@@ -1,7 +1,42 @@
-version: '3'
+version: "3"
 
 services:
+  traefik:
+    image: "traefik:v2.2"
+    container_name: traefik
+    restart: always
+    command:
+      #      - "--log.level=DEBUG"
+      #      - "--api.insecure=true"
+      - "--providers.docker=true"
+      - "--providers.docker.exposedbydefault=false"
+      - "--entrypoints.web.address=:80"
+      - "--entrypoints.websecure.address=:443"
+      - "--certificatesresolvers.tls-resolver.acme.httpchallenge=true"
+      - "--certificatesresolvers.tls-resolver.acme.httpchallenge.entrypoint=web"
+      #      - "--certificatesresolvers.tls-resolver.acme.caserver=https://acme-staging-v02.api.letsencrypt.org/directory"
+      - "--certificatesresolvers.tls-resolver.acme.email=contact@schnittfest.gmbh"
+      - "--certificatesresolvers.tls-resolver.acme.storage=/letsencrypt/acme.json"
+    ports:
+      - "80:80"
+      - "443:443"
+    #      - "8080:8080"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - /root/schnittfest/letsencrypt:/letsencrypt
   schnittfest:
     image: kugel/schnittfest
-    ports:
-      - "8080:80"
+    container_name: schnittfest
+    restart: always
+    depends_on:
+      - traefik
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.schnittfest.entrypoints=web"
+      - "traefik.http.routers.schnittfest.rule=Host(`schnittfest.gmbh`)"
+      - "traefik.http.routers.schnittfest.middlewares=http-redirect"
+      - "traefik.http.routers.schnittfest-secure.entrypoints=websecure"
+      - "traefik.http.routers.schnittfest-secure.rule=Host(`schnittfest.gmbh`)"
+      - "traefik.http.routers.schnittfest-secure.tls.certresolver=tls-resolver"
+      - "traefik.http.middlewares.http-redirect.redirectscheme.scheme=https"
+      - "traefik.http.middlewares.http-redirect.redirectscheme.permanent=true"
