@@ -557,7 +557,7 @@ button, a.button {
 }
 
 .section-instagram {
-    padding: 64px 0;
+    padding: 128px 0;
 }
 
 footer {
@@ -670,9 +670,13 @@ footer {
         }
 
         .parts {
-            margin: 64px -16px 0 -16px;
+            margin: 64px 0 0;
             overflow: hidden;
         }
+    }
+
+    .section-instagram {
+        padding: 64px 0;
     }
 
     footer {
