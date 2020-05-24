@@ -11,22 +11,26 @@
     <meta name="msapplication-TileColor" content="#000000" />
     <meta name="theme-color" content="#000000" />
     <meta name="twitter:card" content="product" />
-    <meta name="twitter:site" content="@schnittfest" />
-    <meta name="twitter:title" content="" />
-    <meta name="twitter:description" content="" />
-    <meta name="twitter:image" content="" />
+    <meta name="twitter:title" content="Schnittfest" />
+    <meta name="twitter:description" content="Film, auf den Frame genau." />
+    <meta name="twitter:image" content="/static/1.jpg" />
     <meta property="og:url" content="https://schnittfest.gmbh/" />
-    <meta property="og:title" content="" />
-    <meta property="og:description" content="" />
-    <meta property="og:image" content="" />
+    <meta property="og:title" content="Schnittfest" />
+    <meta property="og:description" content="Film, auf den Frame genau." />
+    <meta property="og:image" content="/static/1.jpg" />
 
     <link rel="stylesheet" type="text/css" href="static/main.css" />
     <link rel="stylesheet" type="text/css" href="static/manrope.css" />
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-    <link rel="apple-touch-icon" sizes="180x180" href="" />
-    <link rel="icon" type="image/png" sizes="32x32" href="" />
-    <link rel="icon" type="image/png" sizes="16x16" href="" />
-    <link rel="mask-icon" href="" color="#000000" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/favicon-16x16.png" />
+    <link rel="mask-icon" href="/static/safari-pinned-tab.svg" color="#000000" />
+    <link rel="shortcut icon" href="/static/favicon.ico" />
+    <meta name="apple-mobile-web-app-title" content="Schnittfest" />
+    <meta name="application-name" content="Schnittfest" />
+    <meta name="msapplication-TileColor" content="#000000" />
+    <meta name="theme-color" content="#000000" />
 
     <title>Schnittfest</title>
 </head>
@@ -174,7 +178,7 @@
                     <div class="square" data-aos="fade-in">
                         <h2 class="black-to-beige">Rental</h2>
                         <p class="black-to-beige">
-                            Ready to Shoot Set mit ARRI Alexa Mini LF inkl. Zubehör ab 700€ pro Tag. Weitere Details entnehmen Sie bitte der <a href="static/Schnittfest_Rental_Preisliste.pdf">Preisliste</a>. Es gelten die <a href="/agb">allgemeinen Geschäftsbedinungen</a>.
+                            Ready to Shoot Set mit ARRI Alexa Mini LF inkl. Zubehör ab 700€ pro Tag. Weitere Details entnehmen Sie bitte der <a href="static/Schnittfest_Rental_Preisliste.pdf" target="_blank">Preisliste</a>. Es gelten die <a href="/agb" target="_blank">allgemeinen Geschäftsbedinungen</a>.
                         </p>
                         <a class="button primary" href="mailto:rental@schnittfest.gmbh">Jetzt buchen</a>
                     </div>
@@ -232,31 +236,7 @@
         </div>
     </section>
 
-    <footer id="footer">
-        <div class="container">
-            <ul>
-                <li>© 2020 Schnittfest GmbH</li>
-                <li>
-                    <a href="tel:+49017693124984">+49 176 93124984</a>
-                </li>
-                <li>
-                    <a href="mailto:hi@schnitffest.gmbh">hi@schnittfest.gmbh</a>
-                </li>
-                <li>
-                    <a href="https://instagram.com/schnittfest.gmbh">Instagram</a>
-                </li>
-                <li>
-                    <a href="/https://vimeo.com/schnittfest">Vimeo</a>
-                </li>
-                <li>
-                    <a href="/agb">AGB</a>
-                </li>
-                <li>
-                    <a href="/impressum">Impressum</a>
-                </li>
-            </ul>
-        </div>
-    </footer>
+    {{template "footer.html" .}}
 
     <script type="text/javascript" src="https://player.vimeo.com/api/player.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.0.4/gsap.min.js"></script>

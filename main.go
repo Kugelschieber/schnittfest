@@ -77,6 +77,8 @@ func setupRouter() *mux.Router {
 
 	// pages
 	router.HandleFunc("/", pages.LandingPageHandler).Methods("GET")
+	router.HandleFunc("/agb", pages.TermsPageHandler).Methods("GET")
+	router.HandleFunc("/impressum", pages.LegalPageHandler).Methods("GET")
 
 	return router
 }

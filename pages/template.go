@@ -11,6 +11,8 @@ import (
 const (
 	defaultTemplateBase  = "template"
 	landingPageTemplate  = "landing_page"
+	termsPageTemplate  	 = "terms_page"
+	legalPageTemplate  	 = "legal_page"
 	notfoundPageTemplate = "notfound_page"
 )
 
@@ -27,17 +29,21 @@ func LoadTemplates() {
 	}
 
 	if _, err := tplCache.ParseFiles(landingPageTemplate, filepath.Join(templateBase, "landing_page.html"),
-		filepath.Join(templateBase, "head.html"),
-		filepath.Join(templateBase, "end.html"),
-		filepath.Join(templateBase, "navbar.html"),
 		filepath.Join(templateBase, "footer.html")); err != nil {
 		logbuch.Fatal("Error loading landing page template", logbuch.Fields{"err": err})
 	}
 
+	if _, err := tplCache.ParseFiles(termsPageTemplate, filepath.Join(templateBase, "terms_page.html"),
+		filepath.Join(templateBase, "footer.html")); err != nil {
+		logbuch.Fatal("Error loading terms page template", logbuch.Fields{"err": err})
+	}
+
+	if _, err := tplCache.ParseFiles(legalPageTemplate, filepath.Join(templateBase, "legal_page.html"),
+		filepath.Join(templateBase, "footer.html")); err != nil {
+		logbuch.Fatal("Error loading legal page template", logbuch.Fields{"err": err})
+	}
+
 	if _, err := tplCache.ParseFiles(notfoundPageTemplate, filepath.Join(templateBase, "404_page.html"),
-		filepath.Join(templateBase, "head.html"),
-		filepath.Join(templateBase, "end.html"),
-		filepath.Join(templateBase, "navbar.html"),
 		filepath.Join(templateBase, "footer.html")); err != nil {
 		logbuch.Fatal("Error loading 404 page template", logbuch.Fields{"err": err})
 	}

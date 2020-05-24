@@ -6,12 +6,12 @@ import (
 	"net/http"
 )
 
-var landingPageI18n = map[string]map[string]string{
+var termsPageI18n = map[string]map[string]string{
 	"de": {},
 }
 
-func LandingPageHandler(w http.ResponseWriter, r *http.Request) {
-	tpl := tplCache.GetTemplate(landingPageTemplate)
+func TermsPageHandler(w http.ResponseWriter, r *http.Request) {
+	tpl := tplCache.GetTemplate(termsPageTemplate)
 
 	if tpl == nil {
 		w.WriteHeader(http.StatusNotFound)
@@ -23,12 +23,12 @@ func LandingPageHandler(w http.ResponseWriter, r *http.Request) {
 		Vars       map[string]string
 		FooterVars map[string]string
 	}{
-		landingPageI18n[langCode],
+		termsPageI18n[langCode],
 		footerComponentI18n[langCode],
 	}
 
 	if err := tpl.Execute(w, &data); err != nil {
-		logbuch.Error("Error rendering landing page", logbuch.Fields{"err": err})
+		logbuch.Error("Error rendering terms page", logbuch.Fields{"err": err})
 		w.WriteHeader(http.StatusInternalServerError)
 	}
 }

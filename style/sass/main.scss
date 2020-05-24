@@ -9,7 +9,7 @@
 html {
     color: var(--black);
     font-family: "Manrope", -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-    
+
     --white: #fff;
     --beige: #f7eee0;
     --yellow: #febb28;
@@ -29,9 +29,10 @@ body {
 
 section {
     width: 100%;
+    overflow: hidden;
 }
 
-h1, h2, h3, p {
+h1, h2, h3, h4, p {
     margin-block-start: 0;
     margin-block-end: 0;
     line-height: 1.5;
@@ -51,6 +52,11 @@ h2 {
 
 h3 {
     font-size: 32px;
+}
+
+h4 {
+    font-size: 20px;
+    font-weight: 600;
 }
 
 p {
@@ -221,7 +227,7 @@ button, a.button {
     padding: 128px 0;
 
     h2 {
-        margin: 0 96px 24px 0;
+        margin: 0 64px 24px 0;
         padding-bottom: 12px;
         border-bottom: 8px solid;
 
@@ -239,7 +245,7 @@ button, a.button {
     }
 
     p {
-        margin: 0 96px 64px 0;
+        margin: 0 64px 64px 0;
 
         &:last-of-type {
             margin-bottom: 16px;
@@ -282,13 +288,13 @@ button, a.button {
     }
 
     h2 {
-        margin: 0 0 24px 96px;
+        margin: 0 0 24px 64px;
         padding-bottom: 12px;
         border-bottom: 8px solid;
     }
 
     p {
-        margin-left: 96px;
+        margin-left: 64px;
     }
 }
 
@@ -560,6 +566,22 @@ button, a.button {
     padding: 128px 0;
 }
 
+.section-text {
+    padding: 128px 0;
+
+    h3 {
+        margin-bottom: 32px;
+    }
+
+    h4 {
+        margin: 16px 0 12px;
+    }
+
+    p {
+        margin-bottom: 12px;
+    }
+}
+
 footer {
     padding: 128px 0;
 
@@ -622,6 +644,14 @@ footer {
         font-size: 36px;
     }
 
+    h3 {
+        font-size: 24px;
+    }
+
+    h4 {
+        font-size: 20px;
+    }
+
     .section-start {
         padding: 64px 0;
 
@@ -679,6 +709,10 @@ footer {
         padding: 64px 0;
     }
 
+    .section-text {
+        padding: 64px 0;
+    }
+
     footer {
         padding: 64px 0;
 
@@ -711,5 +745,61 @@ footer {
 
     h2 {
         font-size: 32px;
+    }
+
+    .section-start {
+        padding: 32px 0 0;
+
+        .headline {
+            margin-bottom: 32px;
+        }
+    }
+
+    .section-service {
+        padding: 64px 0 0;
+
+        h2 {
+            border-bottom: 4px solid;
+        }
+
+        .img {
+            margin-top: 32px;
+        }
+    }
+
+    .section-work {
+        padding: 64px 0 0;
+
+        .video {
+            margin-bottom: 32px;
+        }
+
+        h2 {
+            border-bottom: 4px solid;
+        }
+    }
+
+    .section-rental {
+        padding: 64px 0 0;
+
+        .square h2 {
+            border-bottom: 4px solid var(--red);
+        }
+
+        .parts {
+            margin: 32px 0 0;
+        }
+    }
+
+    .section-instagram {
+        padding: 32px 0;
+    }
+
+    .section-text {
+        padding: 32px 0;
+    }
+
+    footer {
+        padding: 32px 0;
     }
 }
