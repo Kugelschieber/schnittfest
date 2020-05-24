@@ -1,44 +1,52 @@
 @import "_reset.scss";
 @import "_grid.scss";
 
-html {
-    background-color: black;
-    font-family: "Manrope", -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+* {
+    color: var(--black);
+    box-sizing: border-box;
+}
 
-    --beige: #F7EEE0;
-    --yellow: #FEBB28;
-    --orange: #FE6732;
-    --red: #F5303C;
-    --pink: #CE2867;
-    --purple: #571B47;
+html {
+    color: var(--black);
+    font-family: "Manrope", -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    
+    --white: #fff;
+    --beige: #f7eee0;
+    --yellow: #febb28;
+    --orange: #fe6732;
+    --red: #f5303c;
+    --pink: #ce2867;
+    --purple: #571b47;
     --grey: #3d3d3d;
+    --black: #000;
 }
 
 body {
+    background-color: var(--beige);
+    padding: 0 16px;
     overflow-x: hidden;
 }
 
 section {
-    width: 100vw;
+    width: 100%;
 }
 
 h1, h2, h3, p {
     margin-block-start: 0;
     margin-block-end: 0;
+    line-height: 1.5;
 }
 
 h1, h2, h3 {
-    font-weight: 700;
-    line-height: 1.1;
-    letter-spacing: -2%;
+    font-weight: 500;
 }
 
 h1 {
-    font-size: 64px;
+    font-size: 96px;
 }
 
 h2 {
-    font-size: 40px;
+    font-size: 48px;
 }
 
 h3 {
@@ -48,15 +56,21 @@ h3 {
 p {
     font-size: 18px;
     font-weight: 500;
-    line-height: 1.4;
+
+    a {
+        color: var(--red);
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
 }
 
-button {
+button, a.button {
     font-size: 18px;
     font-weight: 600;
     padding: 23px 32px;
     cursor: pointer;
-    transition: background-color 0.2s ease-in-out;
 }
 
 [data-aos="fade-in"] {
@@ -68,60 +82,24 @@ button {
 	}
 }
 
-.bg { // background
-    &-white {
-        background-color: white;
-    }
-
-    &-beige {
-        background-color: var(--beige);
-    }
-
-    &-yellow {
-        background-color: var(--yellow);
-    }
-
-    &-orange {
-        background-color: var(--orange);
-    }
-
-    &-red {
-        background-color: var(--red);
-    }
-
-    &-pink {
-        background-color: var(--pink);
-    }
-
-    &-purple {
-        background-color: var(--purple);
-    }
-
-    &-grey {
-        background-color: var(--grey);
-    }
-
-    &-black {
-        background-color: black;
-    }
-}
-
 .header {
     position: sticky;
     top: 0;
     left: 0;
-    right: 0;
-    height: 96px;
-    color: white;
+    height: 64px;
+    width: 100%;
+    background-color: var(--beige);
     z-index: 100;
+    -webkit-backface-visibility: hidden; /* Correct fixed positioning on mobile */
 
     .container {
         height: 100%;
         display: flex;
         align-items: center;
 
-        img {
-            width: 100px;
+        .wordmark {
+            font-size: 24px;
+            font-weight: 700;
             cursor: pointer;
         }
 
@@ -132,27 +110,39 @@ button {
             text-align: right;
 
             li {
+                position: relative;
                 display: inline-flex;
-                margin-left: 64px;
+                margin-left: 48px;
                 font-size: 18px;
-                font-weight: 600;
+                line-height: 1.5;
+                font-weight: 500;
+                color: inherit;
                 cursor: pointer;
-                transition: color 0.2s ease-in-out;
-
-                &:nth-of-type(1):hover {
-                    color: var(--yellow);
+                
+                &:nth-of-type(1):hover::before {
+                    background-color: var(--pink);
                 }
 
-                &:nth-of-type(2):hover {
-                    color: var(--orange);
+                &:nth-of-type(2):hover::before {
+                    background-color: var(--red);
                 }
 
-                &:nth-of-type(3):hover {
-                    color: var(--red);
+                &:nth-of-type(3):hover::before {
+                    background-color: var(--orange);
                 }
 
-                &:nth-of-type(4):hover {
-                    color: var(--pink);
+                &:nth-of-type(4):hover::before {
+                    background-color: var(--yellow);
+                }
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    right: 0;
+                    bottom: 0;
+                    left: 0;
+                    height: 2px;
+                    z-index: -1;
                 }
             }
         }
@@ -192,114 +182,114 @@ button {
 }
 
 .section-start {
-    .container {
-        padding: 0;
-        overflow: hidden;
+    padding: 128px 0;
+
+    .headline {
+        display: flex;
+        margin-bottom: 96px;
+
+        h1 {
+            flex: 1;
+
+            a {
+                color: var(--red);
+            }
+        }
+
+        img {
+            cursor: pointer;
+        }
     }
 
     .hero {
-        position: relative;
         width: 100%;
         max-width: 100%;
-        display: flex;
-        justify-content: center;
         overflow: hidden;
         z-index: 1;
 
         video {
+            height: 100%;
+            min-height: 384px;
             width: 100%;
-            max-width: 100%;
+            object-fit: cover;
             transform: scale(1.004);
-        }
-    }
-
-    .stripe {
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        width: 160px;
-        display: flex;
-        z-index: -1;
-
-        & > div {
-            width: 20%;
         }
     }
 }
 
 .section-service {
-    padding: 96px 0 128px;
-
-    .container {
-        padding: 0;
-    }
-    
-    .square {
-        padding: 32px;
-    }
-
-    h1 {
-        color: white;
-        margin-bottom: 96px;
-        margin-left: 32px;
-    }
+    padding: 128px 0;
 
     h2 {
-        color: white;
-        margin-bottom: 32px;
-    }
+        margin: 0 96px 24px 0;
+        padding-bottom: 12px;
+        border-bottom: 8px solid;
 
-    button {
-        display: inline-flex;
-        color: white;
-        background-color: var(--purple);
-        margin-top: 64px;
+        &:nth-of-type(1) {
+            border-color: var(--red);
+        }
 
-        &:hover {
-            background-color: black;
+        &:nth-of-type(2) {
+            border-color: var(--orange);
+        }
+
+        &:nth-of-type(3) {
+            border-color: var(--yellow);
         }
     }
-}
 
-.section-image {
-    width: 100vw;
-    max-height: 80vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
+    p {
+        margin: 0 96px 64px 0;
 
-    img {
-        width: 100%;
-        display: block;
+        &:last-of-type {
+            margin-bottom: 16px;
+        }
+    }
+
+    .img {
+        min-height: 512px;
+        background-image: url("1.jpg");
+        background-position: center 33%;
+        overflow: hidden;
     }
 }
 
 .section-work {
     padding: 128px 0;
 
-    h1 {
-        position: sticky;
-        top: 128px;
-        margin-left: 64px;
-        color: black;
-        writing-mode: vertical-lr;
-        -webkit-text-orientation: mixed;
-        text-orientation: mixed;
-    }
+    .video {
+        margin-bottom: 128px;
 
-    .videos > div {
-        margin-bottom: 64px;
+        &:nth-of-type(4n+1) h2 {
+            border-color: var(--pink);
+        }
+
+        &:nth-of-type(4n+2) h2 {
+            border-color: var(--red);
+        }
+
+        &:nth-of-type(4n+3) h2 {
+            border-color: var(--orange);
+        }
+
+        &:nth-of-type(4n+4) h2 {
+            border-color: var(--yellow);
+        }
 
         &:last-of-type {
-            margin: 0;
+            margin-bottom: 0;
         }
     }
-}
 
-.section-instagram {
-    padding: 64px 0;
+    h2 {
+        margin: 0 0 24px 96px;
+        padding-bottom: 12px;
+        border-bottom: 8px solid;
+    }
+
+    p {
+        margin-left: 96px;
+    }
 }
 
 .section-rental {
@@ -308,25 +298,22 @@ button {
     .square {
         position: sticky;
         top: 128px;
-        padding: 32px;
+        padding: 32px 0;
 
         h2 {
             margin-bottom: 32px;
-            color: white;
+            padding-bottom: 16px;
+            border-bottom: 8px solid var(--red);
         }
 
-        p {
-            color: black;
-        }
-
-        button {
+        button, a.button {
             display: inline-flex;
-            color: black;
+            color: var(--black);
             background-color: var(--yellow);
             margin-top: 48px;
     
             &:hover {
-                background-color: var(--beige);
+                box-shadow: inset 0 0 0 2px var(--black);
             }
         }
     }
@@ -569,45 +556,147 @@ button {
     }
 }
 
+.section-instagram {
+    padding: 64px 0;
+}
+
+footer {
+    padding: 128px 0;
+
+    ul {
+        display: flex;
+        justify-content: space-between;
+
+        li {
+            font-size: 18px;
+            line-height: 1.5;
+            font-weight: 500;
+
+            &:first-of-type {
+                flex: 1;
+            }
+
+            &:not(:first-of-type) {
+                margin-left: 48px;
+            }
+
+            &:nth-of-type(4n+1):hover a::before {
+                background-color: var(--pink);
+            }
+
+            &:nth-of-type(4n+2):hover a::before {
+                background-color: var(--red);
+            }
+
+            &:nth-of-type(4n+3):hover a::before {
+                background-color: var(--orange);
+            }
+
+            &:nth-of-type(4n+4):hover a::before {
+                background-color: var(--yellow);
+            }
+
+            a {
+                position: relative;
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    right: 0;
+                    bottom: 0;
+                    left: 0;
+                    height: 2px;
+                    z-index: -1;
+                }
+            }
+        }
+    }
+}
+
 @media only screen and (max-width: 1023px) {
     h1 {
-        font-size: 48px;
+        font-size: 64px;
     }
 
     h2 {
         font-size: 36px;
     }
 
-    .section-work {
-        h1 {
-            writing-mode: initial;
-            margin-left: 0;
-            margin-bottom: 32px;
+    .section-start {
+        padding: 64px 0;
+
+        .headline {
+            margin-bottom: 64px;
+        }
+    }
+
+    .section-service {
+        padding: 64px 0;
+
+        h2 {
+            margin: 0 32px 24px 0;
         }
 
-        .videos > div {
-            margin-bottom: 16px;
+        p {
+            margin: 0 32px 32px 0;
+        }
+
+        .img {
+            margin-top: 64px;
+        }
+    }
+
+    .section-work {
+        padding: 64px 0;
+
+        h2 {
+            margin: 0 0 24px 0;
+        }
+
+        p {
+            margin: 0 0 32px 0;
+        }
+
+        .video {
+            margin-bottom: 64px;
         }
     }
 
     .section-rental {
-        .container {
+        padding: 64px 0;
+
+        .square {
             padding: 0;
         }
 
-        .square {
-            position: static;
-        }
-
         .parts {
+            margin: 64px -16px 0 -16px;
             overflow: hidden;
+        }
+    }
+
+    footer {
+        padding: 64px 0;
+
+        ul {
+            display: block;
+
+            li {
+                margin: 12px 0 !important;
+            }
         }
     }
 }
 
 @media only screen and (max-width: 767px) {
     .section-service {
-        padding-bottom: 0;
+        h2, p {
+            margin: 0 0 16px 0;
+        }
+
+        p {
+            margin: 0 0 24px 0;
+        }
     }
 }
 
@@ -618,54 +707,5 @@ button {
 
     h2 {
         font-size: 32px;
-    }
-
-    .container {
-        padding: 0 16px;
-    }
-
-    .header {
-        height: 64px;
-    }
-
-    .section-start {
-        .stripe {
-            width: 80px;
-        }
-    }
-
-    .section-service {
-        padding-top: 32px;
-        
-        h1 {
-            margin-left: 16px;
-            margin-bottom: 64px;
-        }
-
-        h2 {
-            margin-bottom: 16px;
-        }
-
-        button {
-            margin-top: 32px;
-        }
-
-        .square {
-            padding: 32px 16px;
-        }
-    }
-
-    .section-rental {
-        .square {
-            padding: 32px 16px;
-
-            h2 {
-                margin-bottom: 16px;
-            }
-    
-            button {
-                margin-top: 32px;
-            }
-        }
     }
 }
