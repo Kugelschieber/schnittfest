@@ -166,6 +166,7 @@ button, a.button {
     background-color: rgba(0, 0, 0, 0.8);
     z-index: 1000;
     animation: fade-in 0.2s ease-in-out;
+    -webkit-backface-visibility: hidden; /* Correct fixed positioning on mobile */
 
     @keyframes fade-in {
         from {
