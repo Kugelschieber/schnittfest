@@ -4,6 +4,7 @@
   "description": "Schnittfest GmbH website styling.",
   "main": "index.js",
   "scripts": {
+    "build": "node-sass sass/ -o ../static/ --output-style compressed",
     "style": "node-sass -w sass/ -o ../static/ --output-style compressed"
   },
   "author": "Marvin Blum, Daniel Schramm",
