@@ -29,7 +29,6 @@ body {
 
 section {
     width: 100%;
-    overflow: hidden;
 }
 
 h1, h2, h3, h4, p {
@@ -215,7 +214,7 @@ button, a.button {
 
         video {
             height: 100%;
-            min-height: 384px;
+            min-height: 512px;
             width: 100%;
             object-fit: cover;
             transform: scale(1.004);
@@ -256,6 +255,7 @@ button, a.button {
         min-height: 512px;
         background-image: url("1.jpg");
         background-position: center 33%;
+        background-size: cover;
         overflow: hidden;
     }
 }
@@ -307,8 +307,8 @@ button, a.button {
         padding: 32px 0;
 
         h2 {
-            margin-bottom: 32px;
-            padding-bottom: 16px;
+            margin-bottom: 24px;
+            padding-bottom: 12px;
             border-bottom: 8px solid var(--red);
         }
 
@@ -694,9 +694,14 @@ footer {
 
     .section-rental {
         padding: 64px 0;
+        overflow-x: hidden;
 
         .square {
             padding: 0;
+
+            h2 {
+                margin: 0 0 24px 0;
+            }
         }
 
         .parts {
@@ -728,12 +733,31 @@ footer {
 
 @media only screen and (max-width: 767px) {
     .section-service {
-        h2, p {
+        h2 {
             margin: 0 0 16px 0;
+            padding-bottom: 8px;
         }
 
         p {
             margin: 0 0 24px 0;
+        }
+    }
+
+    .section-work {
+        h2 {
+            margin: 0 0 16px 0;
+            padding-bottom: 8px;
+        }
+
+        p {
+            margin: 0 0 24px 0;
+        }
+    }
+
+    .section-rental {
+        .square h2 {
+            margin: 0 0 16px 0;
+            padding-bottom: 8px;
         }
     }
 }
@@ -784,10 +808,6 @@ footer {
 
         .square h2 {
             border-bottom: 4px solid var(--red);
-        }
-
-        .parts {
-            margin: 32px 0 0;
         }
     }
 
