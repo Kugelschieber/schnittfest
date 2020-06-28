@@ -2,7 +2,7 @@ FROM golang AS build
 RUN apt-get update && \
 	apt-get upgrade -y && \
 	apt-get install -y curl && \
-	curl -sL https://deb.nodesource.com/setup_13.x -o nodesource_setup.sh && bash nodesource_setup.sh && \
+	curl -sL https://deb.nodesource.com/setup_14.x -o nodesource_setup.sh && bash nodesource_setup.sh && \
 	apt-get install -y nodejs
 WORKDIR /go/src/github.com/Kugelschieber/schnittfest
 COPY . .
