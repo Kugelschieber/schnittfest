@@ -74,7 +74,7 @@ p {
 button, a.button {
     font-size: 18px;
     font-weight: 600;
-    padding: 23px 32px;
+    padding: 16px 24px;
     cursor: pointer;
 }
 
@@ -316,11 +316,18 @@ button, a.button {
         button, a.button {
             display: inline-flex;
             color: var(--black);
-            background-color: var(--yellow);
-            margin-top: 48px;
+            margin: 48px 12px 0 0;
     
             &:hover {
                 box-shadow: inset 0 0 0 2px var(--black);
+            }
+
+            &.primary {
+                background-color: var(--yellow);
+            }
+
+            &.secondary {
+                background-color: var(--orange);
             }
         }
     }
