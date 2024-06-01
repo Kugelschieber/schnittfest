@@ -1,0 +1,11 @@
+<div class="video row reverse">
+    <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
+        <h2 class="black-to-beige" data-aos="fade-in" data-aos-delay="100">{{copy .Page .Content "h2"}}</h2>
+        <p class="black-to-beige" data-aos="fade-in" data-aos-delay="200">{{copy .Page .Content "text"}}</p>
+    </div>
+    <div class="col-lg-8 col-md-12 col-sm-12 col-xs-12">
+        <div style="padding:56.25% 0 0 0;position:relative;" data-aos="fade-in">
+            <iframe src="{{get .Content "video"}}" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </div>
+</div>

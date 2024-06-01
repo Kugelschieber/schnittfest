@@ -1,0 +1,28 @@
+{{if get .Content "full"}}
+    <nav class="header bg-beige-to-black">
+        <div class="container" data-aos="fade-in" data-aos-delay="50">
+            <div id="homeLink" class="wordmark black-to-beige">Schnittfest</div>
+            <ul class="links hide-sm black-to-beige">
+                <li class="scrollToService">Gewerke</li>
+                <li class="scrollToWork">Referenzen</li>
+                <li class="scrollToFooter">Kontakt</li>
+            </ul>
+            <ul class="show-sm black-to-beige">
+                <li id="mobileMenuOpen">Menü</li>
+            </ul>
+        </div>
+    </nav>
+    <nav id="mobileMenu" class="mobile-menu show-sm" style="display:none">
+        <ul>
+            <li class="scrollToService">Gewerke</li>
+            <li class="scrollToWork">Referenzen</li>
+            <li class="scrollToFooter">Kontakt</li>
+        </ul>
+    </nav>
+{{else}}
+    <nav class="header bg-beige">
+        <div class="container">
+            <div id="homeLink" class="wordmark">Schnittfest</div>
+        </div>
+    </nav>
+{{end}}
