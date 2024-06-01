@@ -1,0 +1,133 @@
+{
+    "path": {
+        "de": "/"
+    },
+    "sitemap": {
+        "priority": "1.0"
+    },
+    "content": {
+        "content": [
+            {"ref": "head"},
+            {
+                "ref": "nav",
+                "data": {
+                    "full": true
+                }
+            },
+            {
+                "tpl": "intro"
+            },
+            {
+                "tpl": "service"
+            },
+            {
+                "tpl": "work",
+                "content": {
+                    "content": [
+                        {
+                            "tpl": "work_entry",
+                            "data": {
+                                "video": "https://www.youtube.com/embed/6z9AUO9lqBs"
+                            },
+                            "copy": {
+                                "de": {
+                                    "h2": "Imagefilm",
+                                    "text": "Schüco Stories auf den schwedischen Inseln in der Nähe von Stockholm. Bei diesem Bauprojekt wurde das komplette vorhaben von der Entstehung bis zum fertigen Objekt filmisch begleitet."
+                                }
+                            }
+                        },
+                        {
+                            "tpl": "work_entry",
+                            "data": {
+                                "video": "https://www.youtube.com/embed/AnKUnt_qr0I"
+                            },
+                            "copy": {
+                                "de": {
+                                    "h2": "Artwork Film",
+                                    "text": "Seit 25 Jahren bringt DansArt Tanz und Kultur nach Bielefeld. In vier Tanzstudios und einem eigenen Theater finden regelmäßig Tanzkurse, Ausbildungen für angehende Profitänzer *innen, Festivals, Workshops, Performances und Konzerte statt."
+                                }
+                            }
+                        },
+                        {
+                            "tpl": "work_entry",
+                            "data": {
+                                "video": "https://www.youtube.com/embed/ZlRCoYe9G20"
+                            },
+                            "copy": {
+                                "de": {
+                                    "h2": "Imagefilm",
+                                    "text": "Neubau, Erweiterung und Renovation – das sind die Geschäftsfelder von H.O. Schlüter. Die H.O. Schlüter GmbH arbeitet als Partner zusammen mit Schüco International KG. Der Metallbau Lübz stellt sich in diesem Unternehmensfilm vor."
+                                }
+                            }
+                        },
+                        {
+                            "tpl": "work_entry",
+                            "data": {
+                                "video": "https://www.youtube.com/embed/nCNS4veOjBY"
+                            },
+                            "copy": {
+                                "de": {
+                                    "h2": "Commercial",
+                                    "text": "Umbauten von Verbrennern zu Elektrofahrzeugen. ESDI EV Technologies ist eine Firma, die sich auf dem Schwerpunkt Elektroumbauten fokussiert hat. Mit Tesla-Technik, Nissan Leaf oder vielen weiteren baut ESDI EV VW Käfer, Porsche, Mini Cooper und mehr zu Elektrofahrzeugen."
+                                }
+                            }
+                        },
+                        {
+                            "tpl": "work_entry",
+                            "data": {
+                                "video": "https://www.youtube.com/embed/sFjOfG-5cIE"
+                            },
+                            "copy": {
+                                "de": {
+                                    "h2": "Imagefilm",
+                                    "text": "GOLDBECK und Schüco, das Fenstersystem AWE80 in der Entwicklung und Produktion in Bielefeld."
+                                }
+                            }
+                        },
+                        {
+                            "tpl": "work_entry",
+                            "data": {
+                                "video": "https://www.youtube.com/embed/ktjlpv6j-Fw"
+                            },
+                            "copy": {
+                                "de": {
+                                    "h2": "Porträtfilm",
+                                    "text": "Digitalisierung im Metallbau - Die berühmt-berüchtigte Industrie 4.0."
+                                }
+                            }
+                        },
+                        {
+                            "tpl": "work_entry",
+                            "data": {
+                                "video": "https://www.youtube.com/embed/ji1ux1Y4Y_U"
+                            },
+                            "copy": {
+                                "de": {
+                                    "h2": "Kampagne",
+                                    "text": "Azubi Recruiting Film für die Berufe Metallbauer, Metalltechnik, Technischer Systemplaner, Büromanagement."
+                                }
+                            }
+                        },
+                        {
+                            "tpl": "work_entry",
+                            "data": {
+                                "video": "https://www.youtube.com/embed/b8ASQboLCO8"
+                            },
+                            "copy": {
+                                "de": {
+                                    "h2": "Eventfilm",
+                                    "text": "50 führende Familienunternehmen aus ganz Deutschland zum Karrieretag Familienunternehmen in Bielefeld bei Schüco - Miele, Hilti, Haribo und viele mehr."
+                                }
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "tpl": "insta"
+            },
+            {"ref": "footer"},
+            {"ref": "end"}
+        ]
+    }
+}

@@ -1,0 +1,17 @@
+{
+    "path": {
+        "de": "/impressum"
+    },
+    "sitemap": {
+        "priority": "0.1"
+    },
+    "content": {
+        "content": [
+            {"ref": "head"},
+            {"ref": "nav"},
+            {"tpl": "legal"},
+            {"ref": "footer"},
+            {"ref": "end"}
+        ]
+    }
+}
