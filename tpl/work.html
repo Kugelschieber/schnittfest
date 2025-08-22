@@ -1,5 +1,5 @@
 <section id="work" class="section-work">
     <div class="container">
-        {{.CMS.Render .Args .Page (index .Content.Content "content")}}
+        {{.CMS.Render .Args .Page (fmt "%s.content" .Content.Position) (index .Content.Content "content")}}
     </div>
 </section>
