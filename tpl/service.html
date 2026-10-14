@@ -1,15 +1,23 @@
-<section id="service" class="section-service bg-beige">
-    <div class="container">
-        <div class="services row">
-            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                <h2 class="black-to-beige" data-aos="fade-in" data-aos-delay="100">Film</h2>
-                <p class="black-to-beige" data-aos="fade-in" data-aos-delay="100">sleep.shoot.eat.repeat. </p>
-                <h2 class="black-to-beige" data-aos="fade-in" data-aos-delay="200">Animation</h2>
-                <p class="black-to-beige" data-aos="fade-in" data-aos-delay="200">Herausstechen und Welten erschaffen.</p>
-                <h2 class="black-to-beige" data-aos="fade-in" data-aos-delay="300">Sound</h2>
-                <p class="black-to-beige" data-aos="fade-in" data-aos-delay="300">Keine Musik wäre wie Butter ohne Brot.</p>
+{{- $headline := default (copy .Page .Content "headline") "Gewerke" -}}
+{{- $text := copy .Page .Content "text" -}}
+{{- $image := default (get .Content "image") "/static/1.jpg" -}}
+{{- $caption := copy .Page .Content "image_caption" -}}
+
+<section class="service" id="service" data-shifu-element="{{ .Content.Position }}">
+    <div class="service__inner">
+        <div class="service__head" data-component="reveal">
+            <h2 class="section-title"><span class="section-title__nr">01</span>{{ $headline }}</h2>
+            {{ with $text }}<div class="service__text">{{ html . }}</div>{{ end }}
+        </div>
+        <div class="service__grid">
+            <div class="service__items">
+                {{ .CMS.Render .Args .Page (fmt "%s.items" .Content.Position) (index .Content.Content "items") }}
+                <slot name="{{ .Content.Position }}/items"></slot>
             </div>
-            <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 img" data-aos="fade-in"></div>
+            <figure class="polaroid" data-component="reveal">
+                <img class="polaroid__image" src="{{ $image }}" alt="{{ default $caption "Schnittfest am Set" }}" loading="lazy" />
+                {{ with $caption }}<figcaption class="polaroid__caption">{{ . }}</figcaption>{{ end }}
+            </figure>
         </div>
     </div>
 </section>

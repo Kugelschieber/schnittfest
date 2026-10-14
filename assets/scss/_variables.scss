@@ -1,0 +1,55 @@
+$beige: #f7eee0;
+$cream: #fff8ec;
+$yellow: #febb28;
+$orange: #fe6732;
+$red: #f5303c;
+$pink: #ce2867;
+$purple: #571b47;
+$ink: #0e0c0b;
+$grey: #3d3d3d;
+
+$max-width: 1440px;
+$radius: 20px;
+$radius-lg: 32px;
+$ease: cubic-bezier(0.34, 1.56, 0.64, 1); // springy
+$ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+$shadow: 6px 6px 0 $ink;
+
+$colors: (
+    "red": $red,
+    "orange": $orange,
+    "yellow": $yellow,
+    "pink": $pink,
+    "purple": $purple
+);
+
+@mixin sm {
+    @media (min-width: 640px) { @content; }
+}
+
+@mixin md {
+    @media (min-width: 900px) { @content; }
+}
+
+@mixin lg {
+    @media (min-width: 1200px) { @content; }
+}
+
+@mixin inner {
+    width: 100%;
+    max-width: $max-width;
+    margin: 0 auto;
+    padding: 0 20px;
+
+    @include md {
+        padding: 0 48px;
+    }
+}
+
+@mixin stripes($color, $size: 22px) {
+    background: repeating-linear-gradient(
+        -45deg,
+        $color 0 $size,
+        $ink $size ($size * 2)
+    );
+}

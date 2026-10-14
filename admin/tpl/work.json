@@ -1,0 +1,10 @@
+{
+    "label": "Referenzen",
+    "content": {
+        "content": { "label": "Referenzen", "tpl_filter": ["work_entry"] }
+    },
+    "copy": {
+        "headline": { "label": "Überschrift" },
+        "text": { "label": "Text", "type": "html" }
+    }
+}

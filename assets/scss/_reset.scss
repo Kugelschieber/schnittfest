@@ -14,7 +14,6 @@ time, mark, audio, video {
 	margin: 0;
 	padding: 0;
 	border: 0;
-	outline: none;
 	font: inherit;
 	text-decoration: none;
 	vertical-align: baseline;
@@ -54,5 +53,4 @@ table {
 }
 
 textarea:focus, input:focus, button:focus {
- 	outline: none;
-}
+ }

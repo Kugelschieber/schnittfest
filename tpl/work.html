@@ -1,5 +1,17 @@
-<section id="work" class="section-work">
-    <div class="container">
-        {{.CMS.Render .Args .Page (fmt "%s.content" .Content.Position) (index .Content.Content "content")}}
+{{- $headline := default (copy .Page .Content "headline") "Referenzen" -}}
+{{- $text := copy .Page .Content "text" -}}
+
+<section class="work" id="work" data-shifu-element="{{ .Content.Position }}">
+    <div class="filmstrip" aria-hidden="true"></div>
+    <div class="work__inner">
+        <div class="work__head" data-component="reveal">
+            <h2 class="section-title section-title--light"><span class="section-title__nr">02</span>{{ $headline }}</h2>
+            {{ with $text }}<div class="work__text">{{ html . }}</div>{{ end }}
+        </div>
+        <div class="work__list">
+            {{ .CMS.Render .Args .Page (fmt "%s.content" .Content.Position) (index .Content.Content "content") }}
+            <slot name="{{ .Content.Position }}/content"></slot>
+        </div>
     </div>
+    <div class="filmstrip filmstrip--bottom" aria-hidden="true"></div>
 </section>

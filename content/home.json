@@ -7,18 +7,87 @@
     },
     "content": {
         "content": [
-            {"ref": "head"},
+            {
+                "ref": "head"
+            },
             {
                 "ref": "nav",
                 "data": {
-                    "full": true
+                    "full": "on"
                 }
             },
             {
-                "tpl": "intro"
+                "tpl": "intro",
+                "copy": {
+                    "de": {
+                        "kicker": "Videoproduktion aus Ostwestfalen",
+                        "headline": "Film, auf den Frame genau.",
+                        "cta_label": "Projekt anfragen",
+                        "cta_href": "mailto:hi@schnittfest.gmbh",
+                        "ticker": "Film ✦ Animation ✦ Sound ✦ Schnitt ✦ Color Grading ✦ Imagefilm ✦ Commercial ✦"
+                    }
+                },
+                "data": {
+                    "video": "/static/hero.mp4",
+                    "poster": "/static/1.jpg"
+                },
+                "content": {}
             },
             {
-                "tpl": "service"
+                "tpl": "service",
+                "copy": {
+                    "de": {
+                        "headline": "Gewerke",
+                        "text": "<div>Von der ersten Idee bis zum finalen Frame: Wir planen, drehen, animieren und vertonen – alles aus einer Hand.</div>",
+                        "image_caption": "Am Set, irgendwo zwischen Take 7 und 8."
+                    }
+                },
+                "data": {
+                    "image": "/static/1.jpg"
+                },
+                "content": {
+                    "items": [
+                        {
+                            "tpl": "service_item",
+                            "copy": {
+                                "de": {
+                                    "title": "Film",
+                                    "text": "sleep.shoot.eat.repeat."
+                                }
+                            },
+                            "data": {
+                                "color": "red"
+                            },
+                            "content": {}
+                        },
+                        {
+                            "tpl": "service_item",
+                            "copy": {
+                                "de": {
+                                    "title": "Animation",
+                                    "text": "Herausstechen und Welten erschaffen."
+                                }
+                            },
+                            "data": {
+                                "color": "orange"
+                            },
+                            "content": {}
+                        },
+                        {
+                            "tpl": "service_item",
+                            "copy": {
+                                "de": {
+                                    "title": "Sound",
+                                    "text": "Keine Musik wäre wie Butter ohne Brot."
+                                }
+                            },
+                            "data": {
+                                "color": "yellow"
+                            },
+                            "content": {}
+                        }
+                    ]
+                }
             },
             {
                 "tpl": "work",
@@ -34,7 +103,8 @@
                                     "h2": "Imagefilm",
                                     "text": "Schüco Stories auf den schwedischen Inseln in der Nähe von Stockholm. Bei diesem Bauprojekt wurde das komplette vorhaben von der Entstehung bis zum fertigen Objekt filmisch begleitet."
                                 }
-                            }
+                            },
+                            "content": {}
                         },
                         {
                             "tpl": "work_entry",
@@ -46,7 +116,8 @@
                                     "h2": "Artwork Film",
                                     "text": "Seit 25 Jahren bringt DansArt Tanz und Kultur nach Bielefeld. In vier Tanzstudios und einem eigenen Theater finden regelmäßig Tanzkurse, Ausbildungen für angehende Profitänzer *innen, Festivals, Workshops, Performances und Konzerte statt."
                                 }
-                            }
+                            },
+                            "content": {}
                         },
                         {
                             "tpl": "work_entry",
@@ -58,7 +129,8 @@
                                     "h2": "Imagefilm",
                                     "text": "Neubau, Erweiterung und Renovation – das sind die Geschäftsfelder von H.O. Schlüter. Die H.O. Schlüter GmbH arbeitet als Partner zusammen mit Schüco International KG. Der Metallbau Lübz stellt sich in diesem Unternehmensfilm vor."
                                 }
-                            }
+                            },
+                            "content": {}
                         },
                         {
                             "tpl": "work_entry",
@@ -70,7 +142,8 @@
                                     "h2": "Commercial",
                                     "text": "Umbauten von Verbrennern zu Elektrofahrzeugen. ESDI EV Technologies ist eine Firma, die sich auf dem Schwerpunkt Elektroumbauten fokussiert hat. Mit Tesla-Technik, Nissan Leaf oder vielen weiteren baut ESDI EV VW Käfer, Porsche, Mini Cooper und mehr zu Elektrofahrzeugen."
                                 }
-                            }
+                            },
+                            "content": {}
                         },
                         {
                             "tpl": "work_entry",
@@ -82,7 +155,8 @@
                                     "h2": "Imagefilm",
                                     "text": "GOLDBECK und Schüco, das Fenstersystem AWE80 in der Entwicklung und Produktion in Bielefeld."
                                 }
-                            }
+                            },
+                            "content": {}
                         },
                         {
                             "tpl": "work_entry",
@@ -94,7 +168,8 @@
                                     "h2": "Porträtfilm",
                                     "text": "Digitalisierung im Metallbau - Die berühmt-berüchtigte Industrie 4.0."
                                 }
-                            }
+                            },
+                            "content": {}
                         },
                         {
                             "tpl": "work_entry",
@@ -106,7 +181,8 @@
                                     "h2": "Kampagne",
                                     "text": "Azubi Recruiting Film für die Berufe Metallbauer, Metalltechnik, Technischer Systemplaner, Büromanagement."
                                 }
-                            }
+                            },
+                            "content": {}
                         },
                         {
                             "tpl": "work_entry",
@@ -118,16 +194,33 @@
                                     "h2": "Eventfilm",
                                     "text": "50 führende Familienunternehmen aus ganz Deutschland zum Karrieretag Familienunternehmen in Bielefeld bei Schüco - Miele, Hilti, Haribo und viele mehr."
                                 }
-                            }
+                            },
+                            "content": {}
                         }
                     ]
+                },
+                "copy": {
+                    "de": {
+                        "headline": "Referenzen",
+                        "text": "<div>Popcorn bereit? Eine Auswahl unserer Lieblingsprojekte.</div>"
+                    }
                 }
             },
             {
-                "tpl": "insta"
+                "tpl": "insta",
+                "copy": {
+                    "de": {
+                        "headline": "Hinter den Kulissen"
+                    }
+                },
+                "content": {}
             },
-            {"ref": "footer"},
-            {"ref": "end"}
+            {
+                "ref": "footer"
+            },
+            {
+                "ref": "end"
+            }
         ]
     }
 }

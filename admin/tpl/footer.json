@@ -1,0 +1,15 @@
+{
+    "label": "_Footer",
+    "layout": true,
+    "copy": {
+        "headline": { "label": "Überschrift" },
+        "text": { "label": "Text" },
+        "copyright": { "label": "Copyright" }
+    },
+    "data": {
+        "email": { "label": "E-Mail" },
+        "phone": { "label": "Telefon" },
+        "instagram": { "label": "Instagram URL" },
+        "vimeo": { "label": "Vimeo URL" }
+    }
+}

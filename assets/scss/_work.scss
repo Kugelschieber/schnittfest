@@ -1,0 +1,61 @@
+@use "variables" as *;
+
+.work {
+    position: relative;
+    padding: 0;
+    background: $ink;
+    color: $beige;
+    counter-reset: take;
+
+    &__inner {
+        @include inner;
+        padding-top: 120px;
+        padding-bottom: 120px;
+
+        @include md {
+            padding-top: 160px;
+            padding-bottom: 160px;
+        }
+    }
+
+    &__head {
+        display: grid;
+        gap: 24px;
+        margin-bottom: 80px;
+
+        @include md {
+            grid-template-columns: 1fr 1fr;
+            align-items: end;
+        }
+    }
+
+    &__text {
+        max-width: 46ch;
+        font-size: 20px;
+        color: rgba($beige, 0.8);
+    }
+
+    &__list {
+        display: grid;
+        gap: 96px;
+
+        @include md {
+            gap: 140px;
+        }
+    }
+}
+
+// sprocket holes
+.filmstrip {
+    height: 44px;
+    background-color: $ink;
+    background-image: radial-gradient(ellipse 9px 8px at center, $beige 96%, transparent 100%);
+    background-size: 40px 20px;
+    background-position: 0 12px;
+    background-repeat: repeat-x;
+    animation: filmstrip 2s linear infinite;
+}
+
+@keyframes filmstrip {
+    to { background-position: 40px 12px; }
+}

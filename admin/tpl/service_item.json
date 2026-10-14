@@ -1,0 +1,20 @@
+{
+    "label": "Gewerk (Klappe)",
+    "copy": {
+        "title": { "label": "Titel" },
+        "text": { "label": "Text" }
+    },
+    "data": {
+        "color": {
+            "label": "Farbe",
+            "type": "select",
+            "options": {
+                "red": "Rot",
+                "orange": "Orange",
+                "yellow": "Gelb",
+                "pink": "Pink",
+                "purple": "Lila"
+            }
+        }
+    }
+}

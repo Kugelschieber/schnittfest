@@ -1,0 +1,137 @@
+@use "variables" as *;
+
+.footer {
+    position: relative;
+    overflow: hidden;
+    padding: 120px 0 32px;
+    background: $red;
+    color: $cream;
+    border-top: 3px solid $ink;
+
+    @include md {
+        padding-top: 160px;
+    }
+
+    // big rotating "film reel" decoration
+    &::before {
+        content: "";
+        position: absolute;
+        right: -160px;
+        top: -160px;
+        width: 480px;
+        height: 480px;
+        border-radius: 50%;
+        background:
+            radial-gradient(circle at 50% 50%, $red 0 34px, transparent 35px),
+            radial-gradient(circle at 50% 22%, $red 0 46px, transparent 47px),
+            radial-gradient(circle at 50% 78%, $red 0 46px, transparent 47px),
+            radial-gradient(circle at 22% 50%, $red 0 46px, transparent 47px),
+            radial-gradient(circle at 78% 50%, $red 0 46px, transparent 47px),
+            $ink;
+        opacity: 0.25;
+        animation: reel 18s linear infinite;
+        pointer-events: none;
+    }
+
+    &__inner {
+        @include inner;
+        position: relative;
+    }
+
+    &__headline {
+        font-size: clamp(56px, 12vw, 180px);
+        line-height: 0.9;
+        font-weight: 800;
+        letter-spacing: -0.05em;
+        color: $cream;
+    }
+
+    &__text {
+        max-width: 32ch;
+        margin-top: 24px;
+        font-size: clamp(20px, 2.4vw, 28px);
+        font-weight: 600;
+    }
+
+    &__mail {
+        margin-top: 40px;
+        font-size: clamp(16px, 2vw, 22px);
+    }
+
+    &__bottom {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 16px;
+        margin-top: 96px;
+        padding-top: 24px;
+        border-top: 2px solid rgba($cream, 0.35);
+        font-size: 15px;
+    }
+
+    &__legal {
+        display: flex;
+        gap: 24px;
+
+        a {
+            text-decoration: none;
+
+            &:hover {
+                text-decoration: underline wavy;
+                text-underline-offset: 4px;
+            }
+        }
+    }
+}
+
+// end-credits style contact list
+.credits {
+    display: grid;
+    gap: 4px;
+    max-width: 640px;
+    margin: 96px 0 0;
+
+    &__row {
+        display: flex;
+        align-items: baseline;
+        gap: 12px;
+        font-size: clamp(18px, 2vw, 22px);
+
+        &::before {
+            content: "";
+            order: 1;
+            flex: 1;
+            border-bottom: 2px dotted rgba($cream, 0.5);
+            transform: translateY(-5px);
+        }
+
+        dt {
+            order: 0;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            opacity: 0.8;
+        }
+
+        dd {
+            order: 2;
+            margin: 0;
+            font-weight: 700;
+
+            a {
+                text-decoration: none;
+                background: linear-gradient($yellow, $yellow) 0 100% / 0 3px no-repeat;
+                transition: background-size 0.3s $ease-out;
+
+                &:hover {
+                    background-size: 100% 3px;
+                }
+            }
+        }
+    }
+}
+
+@keyframes reel {
+    to { transform: rotate(360deg); }
+}

@@ -1,0 +1,10 @@
+{
+    "label": "Instagram",
+    "copy": {
+        "headline": { "label": "Überschrift" }
+    },
+    "data": {
+        "widget": { "label": "LightWidget URL" },
+        "profile": { "label": "Profil URL" }
+    }
+}

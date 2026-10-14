@@ -1,111 +1,34 @@
-<footer id="footer">
-    <div class="container">
-        <ul>
-            <li>© 2024 Schnittfest GmbH</li>
-            <li>
-                <a href="tel:+49017693124984">+49 176 93124984</a>
-            </li>
-            <li>
-                <a href="mailto:hi@schnitffest.gmbh">hi@schnittfest.gmbh</a>
-            </li>
-            <li>
-                <a href="https://instagram.com/schnittfest.gmbh">Instagram</a>
-            </li>
-            <li>
-                <a href="https://vimeo.com/schnittfest">Vimeo</a>
-            </li>
-            <li>
-                <a href="/agb" target="_blank">AGB</a>
-            </li>
-            <li>
-                <a href="/impressum" target="_blank">Impressum</a>
-            </li>
-        </ul>
+{{- $headline := default (copy .Page .Content "headline") "Und… Action?" -}}
+{{- $text := default (copy .Page .Content "text") "Erzähl uns von deiner Idee – wir machen einen Film daraus." -}}
+{{- $email := default (get .Content "email") "hi@schnittfest.gmbh" -}}
+{{- $phone := default (get .Content "phone") "+49 176 93124984" -}}
+{{- $instagram := default (get .Content "instagram") "https://instagram.com/schnittfest.gmbh" -}}
+{{- $vimeo := default (get .Content "vimeo") "https://vimeo.com/schnittfest" -}}
+{{- $copyright := default (copy .Page .Content "copyright") "Schnittfest GmbH" -}}
+
+<footer class="footer" id="footer" data-shifu-element="{{ .Content.Position }}">
+    <div class="footer__inner">
+        <div class="footer__cta" data-component="reveal">
+            <h2 class="footer__headline">{{ $headline }}</h2>
+            <p class="footer__text">{{ $text }}</p>
+            <a class="button button--yellow footer__mail" href="mailto:{{ $email }}">
+                <span class="button__play" aria-hidden="true"></span>{{ $email }}
+            </a>
+        </div>
+
+        <dl class="credits" data-component="reveal">
+            <div class="credits__row"><dt>Telefon</dt><dd><a href="tel:{{ $phone | replace " " "" }}">{{ $phone }}</a></dd></div>
+            <div class="credits__row"><dt>E-Mail</dt><dd><a href="mailto:{{ $email }}">{{ $email }}</a></dd></div>
+            <div class="credits__row"><dt>Instagram</dt><dd><a href="{{ $instagram }}" target="_blank" rel="noopener">schnittfest.gmbh</a></dd></div>
+            <div class="credits__row"><dt>Vimeo</dt><dd><a href="{{ $vimeo }}" target="_blank" rel="noopener">schnittfest</a></dd></div>
+        </dl>
+
+        <div class="footer__bottom">
+            <span>© {{ year }} {{ $copyright }}</span>
+            <span class="footer__legal">
+                <a href="/agb">AGB</a>
+                <a href="/impressum">Impressum</a>
+            </span>
+        </div>
     </div>
 </footer>
-
-<script type="text/javascript" src="https://player.vimeo.com/api/player.js"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.0.4/gsap.min.js"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/animation.gsap.min.js"></script>
-<script type="text/javascript" src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script type="text/javascript" src="https://cdn.lightwidget.com/widgets/lightwidget.js"></script>
-<script type="text/javascript" src="static/js/color.js"></script>
-<script type="text/javascript" src="static/js/parts.js"></script>
-
-<script>
-    AOS.init({
-        duration: 1000,
-        easing: "cubic-bezier(0.4, 0.0, 0.2, 1)",
-        once: true,
-        offset: 32
-    });
-
-    // navbar mobile menu
-    let mobileMenu = document.getElementById("mobileMenu");
-    let mobileMenuOpen = document.getElementById("mobileMenuOpen");
-    let mobileMenuClose = document.getElementById("mobileMenuClose");
-
-    function toggleMobileMenu() {
-        let hidden = mobileMenu.style.display;
-
-        if(hidden) {
-            mobileMenu.style.display = "";
-        } else {
-            mobileMenu.style.display = "none"
-        }
-    }
-
-    mobileMenuOpen.addEventListener("click", e => {
-        e.preventDefault();
-        e.stopPropagation();
-        toggleMobileMenu();
-    });
-
-    // scroll to from navigation
-    let scrollToService = document.getElementsByClassName("scrollToService");
-    let scrollToWork = document.getElementsByClassName("scrollToWork");
-    let scrollToRental = document.getElementsByClassName("scrollToRental");
-    let scrollToFooter = document.getElementsByClassName("scrollToFooter");
-
-    function addScrollTo(nodes, anchor) {
-        for (let node of nodes) {
-            node.addEventListener("click", () => {
-                toggleMobileMenu();
-                let section = document.getElementById(anchor);
-
-                if (window.location.pathname === "/") {
-                    window.scrollTo({top: section.offsetTop, behavior: "smooth"});
-                } else {
-                    window.location = `/#${anchor}`;
-                }
-            });
-        }
-    }
-
-    document.addEventListener("click", e => {
-        if(!mobileMenu.style.display) {
-            mobileMenu.style.display = "none"
-        }
-    });
-
-    addScrollTo(scrollToService, "service");
-    addScrollTo(scrollToWork, "work");
-    addScrollTo(scrollToRental, "rental");
-    addScrollTo(scrollToFooter, "footer");
-
-    // click on logo navigation
-    let homeLink = document.getElementById("homeLink");
-
-    homeLink.addEventListener("click", e => {
-        e.preventDefault();
-        e.stopPropagation();
-
-        if(window.location.pathname === "/") {
-            window.scrollTo({top: 0, behavior: "smooth"});
-        }
-        else {
-            window.location = "/";
-        }
-    });
-</script>

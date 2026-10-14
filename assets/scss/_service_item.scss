@@ -1,0 +1,125 @@
+@use "variables" as *;
+
+.slate {
+    --slate-color: #{$red};
+    position: relative;
+    counter-increment: slate;
+    padding-top: 30px;
+
+    @each $name, $color in $colors {
+        &--#{$name} {
+            --slate-color: #{$color};
+        }
+    }
+
+    &__clapper {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 34px;
+        border: 3px solid $ink;
+        border-radius: 10px 10px 0 0;
+        background: repeating-linear-gradient(
+            -55deg,
+            var(--slate-color) 0 20px,
+            $ink 20px 40px
+        );
+        transform-origin: 6px 100%;
+        transform: rotate(-9deg);
+        transition: transform 0.35s $ease;
+
+        // hinge
+        &::before {
+            content: "";
+            position: absolute;
+            left: 2px;
+            bottom: -9px;
+            width: 12px;
+            height: 12px;
+            border: 3px solid $ink;
+            border-radius: 50%;
+            background: $cream;
+        }
+    }
+
+    &:hover &__clapper {
+        animation: clap 0.45s $ease;
+        transform: rotate(0);
+    }
+
+    &__body {
+        position: relative;
+        padding: 28px 28px 28px;
+        border: 3px solid $ink;
+        border-radius: 0 0 $radius $radius;
+        background: $ink;
+        color: $beige;
+        box-shadow: 8px 8px 0 var(--slate-color);
+        transition: transform 0.35s $ease, box-shadow 0.35s $ease;
+
+        // top stripe bar of the slate body
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 14px;
+            background: repeating-linear-gradient(
+                -55deg,
+                var(--slate-color) 0 20px,
+                $ink 20px 40px
+            );
+            border-bottom: 3px solid $ink;
+        }
+
+        // "SCENE 01"
+        &::after {
+            content: "Szene 0" counter(slate);
+            position: absolute;
+            top: 30px;
+            right: 24px;
+            font-family: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+            font-size: 12px;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            opacity: 0.6;
+        }
+    }
+
+    &:hover &__body {
+        transform: translate(-3px, -3px);
+        box-shadow: 12px 12px 0 var(--slate-color);
+    }
+
+    &__title {
+        margin-top: 12px;
+        font-size: clamp(32px, 4vw, 48px);
+        line-height: 1.1;
+        font-weight: 800;
+        letter-spacing: -0.03em;
+        color: var(--slate-color);
+    }
+
+    &__text {
+        margin-top: 8px;
+        font-size: 18px;
+        color: rgba($beige, 0.85);
+    }
+
+    // playful alternating tilt
+    &:nth-child(odd) { rotate: -1deg; }
+    &:nth-child(even) { rotate: 1deg; }
+}
+
+.service__items {
+    counter-reset: slate;
+}
+
+@keyframes clap {
+    0% { transform: rotate(-9deg); }
+    40% { transform: rotate(-22deg); }
+    70% { transform: rotate(1deg); }
+    100% { transform: rotate(0); }
+}

@@ -1,13 +1,38 @@
-<section id="start" class="section-start">
-    <div class="container" data-aos="fade-in">
-        <div class="headline">
-            <h1 data-aos="fade-in">
-                Film, auf den Frame genau.
-                <a href="mailto:hi@schnittfest.gmbh">&#10230;</a>
-            </h1>
+{{- $headline := default (copy .Page .Content "headline") "Film, auf den Frame genau." -}}
+{{- $kicker := default (copy .Page .Content "kicker") "Videoproduktion aus Ostwestfalen" -}}
+{{- $ctaLabel := default (copy .Page .Content "cta_label") "Projekt anfragen" -}}
+{{- $ctaHref := default (copy .Page .Content "cta_href") "mailto:hi@schnittfest.gmbh" -}}
+{{- $ticker := default (copy .Page .Content "ticker") "Film ✦ Animation ✦ Sound ✦ Schnitt ✦ Color Grading ✦ Drohne ✦ Imagefilm ✦ Commercial ✦" -}}
+{{- $video := default (get .Content "video") "/static/hero.mp4" -}}
+{{- $poster := default (get .Content "poster") "/static/1.jpg" -}}
+
+<section class="intro" id="start" data-shifu-element="{{ .Content.Position }}">
+    <div class="intro__inner">
+        <p class="intro__kicker" data-component="reveal"><span class="intro__kicker-dot"></span>{{ $kicker }}</p>
+        <h1 class="intro__headline" data-component="reveal">{{ $headline }}</h1>
+        <div class="intro__cta" data-component="reveal">
+            <a class="button button--yellow" href="{{ $ctaHref }}"><span class="button__play" aria-hidden="true"></span>{{ $ctaLabel }}</a>
         </div>
-        <div id="hero" class="hero" data-aos="fade-in" data-aos-delay="200">
-            <video src="/static/hero.mp4" autoplay loop muted playsinline />
+
+        <div class="viewfinder" data-component="reveal">
+            <video class="viewfinder__video" src="{{ $video }}" poster="{{ $poster }}" autoplay loop muted playsinline></video>
+            <div class="viewfinder__overlay" aria-hidden="true">
+                <span class="viewfinder__corner viewfinder__corner--tl"></span>
+                <span class="viewfinder__corner viewfinder__corner--tr"></span>
+                <span class="viewfinder__corner viewfinder__corner--bl"></span>
+                <span class="viewfinder__corner viewfinder__corner--br"></span>
+                <span class="viewfinder__rec">REC</span>
+                <span class="viewfinder__timecode" data-component="timecode">00:00:00:00</span>
+                <span class="viewfinder__meta">4K · 25 FPS · ISO 800</span>
+                <span class="viewfinder__battery"></span>
+                <span class="viewfinder__focus"></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="ticker" aria-hidden="true">
+        <div class="ticker__track">
+            <span>{{ $ticker }}</span><span>{{ $ticker }}</span><span>{{ $ticker }}</span><span>{{ $ticker }}</span>
         </div>
     </div>
 </section>

@@ -1,0 +1,10 @@
+{
+    "label": "Referenz (Video)",
+    "copy": {
+        "h2": { "label": "Titel" },
+        "text": { "label": "Text" }
+    },
+    "data": {
+        "video": { "label": "Embed-URL (YouTube/Vimeo)" }
+    }
+}

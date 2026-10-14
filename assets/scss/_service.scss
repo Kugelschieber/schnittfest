@@ -1,0 +1,99 @@
+@use "variables" as *;
+
+.service {
+    padding: 120px 0;
+
+    @include md {
+        padding: 160px 0;
+    }
+
+    &__inner {
+        @include inner;
+    }
+
+    &__head {
+        display: grid;
+        gap: 24px;
+        margin-bottom: 64px;
+
+        @include md {
+            grid-template-columns: 1fr 1fr;
+            align-items: end;
+        }
+    }
+
+    &__text {
+        max-width: 46ch;
+        font-size: 20px;
+    }
+
+    &__grid {
+        display: grid;
+        gap: 56px;
+
+        @include md {
+            grid-template-columns: 5fr 7fr;
+            align-items: start;
+            gap: 64px;
+        }
+    }
+
+    &__items {
+        display: grid;
+        gap: 32px;
+    }
+}
+
+.polaroid {
+    position: relative;
+    margin: 0;
+    padding: 16px 16px 72px;
+    border: 3px solid $ink;
+    background: $cream;
+    box-shadow: 10px 10px 0 $ink;
+    rotate: 2.5deg;
+    transition: rotate 0.5s $ease, scale 0.5s $ease, opacity 0.8s $ease-out, transform 0.9s $ease-out;
+
+    @include md {
+        position: sticky;
+        top: 120px;
+    }
+
+    &:hover {
+        rotate: -1deg;
+        scale: 1.02;
+    }
+
+    // tape
+    &::before {
+        content: "";
+        position: absolute;
+        top: -18px;
+        left: 50%;
+        width: 140px;
+        height: 36px;
+        transform: translateX(-50%) rotate(-4deg);
+        background: rgba($yellow, 0.85);
+        border: 2px dashed rgba($ink, 0.25);
+    }
+
+    &__image {
+        width: 100%;
+        aspect-ratio: 4 / 3;
+        object-fit: cover;
+        object-position: center 33%;
+        border: 3px solid $ink;
+    }
+
+    &__caption {
+        position: absolute;
+        right: 16px;
+        bottom: 18px;
+        left: 16px;
+        font-size: 18px;
+        font-weight: 700;
+        font-style: italic;
+        text-align: center;
+        transform: rotate(-1deg);
+    }
+}

@@ -1,0 +1,167 @@
+@use "variables" as *;
+
+.nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    padding: 12px 0;
+    transition: padding 0.3s $ease-out;
+
+    &__inner {
+        @include inner;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+    }
+
+    &__brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 10px 18px;
+        border: 3px solid $ink;
+        border-radius: 999px;
+        background: $cream;
+        box-shadow: 4px 4px 0 $ink;
+        text-decoration: none;
+        font-size: 22px;
+        font-weight: 800;
+        letter-spacing: -0.02em;
+        transition: transform 0.3s $ease;
+
+        &:hover {
+            transform: rotate(-3deg) scale(1.04);
+        }
+    }
+
+    &__rec {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: $red;
+        box-shadow: 0 0 0 0 rgba($red, 0.6);
+        animation: rec-pulse 1.6s infinite;
+    }
+
+    &__word {
+        display: inline-flex;
+        align-items: center;
+    }
+
+    &__cut {
+        display: inline-block;
+        margin: 0 1px;
+        color: $orange;
+        font-size: 0.75em;
+        transform: rotate(-90deg);
+        transition: transform 0.5s $ease;
+    }
+
+    &__brand:hover &__cut {
+        transform: rotate(-90deg) translateY(-3px) scaleX(0.6);
+    }
+
+    &__toggle {
+        display: inline-flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 6px;
+        width: 52px;
+        height: 52px;
+        padding: 0 14px;
+        border: 3px solid $ink;
+        border-radius: 50%;
+        background: $yellow;
+        box-shadow: 4px 4px 0 $ink;
+        cursor: pointer;
+
+        @include md {
+            display: none;
+        }
+    }
+
+    &__toggle-bar {
+        display: block;
+        height: 3px;
+        border-radius: 3px;
+        background: $ink;
+        transition: transform 0.3s $ease;
+    }
+
+    &--open &__toggle-bar:first-child { transform: translateY(4.5px) rotate(45deg); }
+    &--open &__toggle-bar:nth-child(2) { transform: translateY(-4.5px) rotate(-45deg); }
+
+    &__links {
+        display: none;
+        gap: 8px;
+        padding: 6px;
+        border: 3px solid $ink;
+        border-radius: 999px;
+        background: $cream;
+        box-shadow: 4px 4px 0 $ink;
+
+        @include md {
+            display: flex;
+        }
+    }
+
+    &__link {
+        position: relative;
+        padding: 8px 18px;
+        border-radius: 999px;
+        font-size: 16px;
+        font-weight: 700;
+        text-decoration: none;
+        transition: background 0.2s, transform 0.3s $ease;
+
+        &:hover {
+            background: $ink;
+            color: $beige;
+            transform: rotate(-2deg);
+        }
+
+        &--cta {
+            background: $red;
+            color: $cream;
+        }
+    }
+
+    // mobile overlay menu
+    &--open &__links {
+        position: fixed;
+        inset: 84px 16px auto;
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        padding: 16px;
+        border-radius: $radius-lg;
+        animation: menu-pop 0.4s $ease;
+
+        .nav__link {
+            padding: 16px 20px;
+            font-size: 28px;
+            font-weight: 800;
+
+            &::before {
+                content: attr(data-nr);
+                margin-right: 12px;
+                font-size: 14px;
+                vertical-align: middle;
+                opacity: 0.5;
+            }
+        }
+    }
+}
+
+@keyframes rec-pulse {
+    0% { box-shadow: 0 0 0 0 rgba($red, 0.6); opacity: 1; }
+    50% { opacity: 0.35; }
+    70% { box-shadow: 0 0 0 10px rgba($red, 0); }
+    100% { box-shadow: 0 0 0 0 rgba($red, 0); opacity: 1; }
+}
+
+@keyframes menu-pop {
+    from { opacity: 0; transform: scale(0.9) rotate(-2deg); }
+    to { opacity: 1; transform: none; }
+}

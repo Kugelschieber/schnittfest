@@ -1,0 +1,267 @@
+@use "variables" as *;
+
+.intro {
+    position: relative;
+    padding: 48px 0 0;
+
+    @include md {
+        padding-top: 72px;
+    }
+
+    &__inner {
+        @include inner;
+        position: relative;
+    }
+
+    &__kicker {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 20px;
+        padding: 6px 14px;
+        border-radius: 999px;
+        background: $ink;
+        color: $beige;
+        font-size: 14px;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        rotate: -2deg;
+    }
+
+    &__kicker-dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: $red;
+        animation: blink 1s steps(1) infinite;
+    }
+
+    &__headline {
+        max-width: 12ch;
+        font-size: clamp(52px, 11vw, 168px);
+        line-height: 0.92;
+        // background-clip: text only paints inside the box; keep descenders (g, p, …) visible
+        padding-bottom: 0.3em;
+        margin-bottom: -0.3em;
+        font-weight: 800;
+        letter-spacing: -0.045em;
+        background: linear-gradient(100deg, $ink 0 48%, $red 68%, $orange 88%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        -webkit-text-fill-color: transparent;
+    }
+
+    &__cta {
+        margin-top: 32px;
+
+        @include md {
+            position: absolute;
+            top: 0;
+            right: 48px;
+            margin: 0;
+            rotate: 4deg;
+            transition: rotate 0.4s $ease, opacity 0.8s $ease-out, transform 0.9s $ease-out;
+
+            &:hover {
+                rotate: -2deg;
+            }
+        }
+    }
+}
+
+@keyframes blink {
+    50% { opacity: 0; }
+}
+
+.viewfinder {
+    position: relative;
+    margin-top: 48px;
+    overflow: hidden;
+    border: 3px solid $ink;
+    border-radius: $radius-lg;
+    background: $ink;
+    box-shadow: 10px 10px 0 $orange;
+    aspect-ratio: 16 / 9;
+    min-height: 320px;
+
+    @include md {
+        margin-top: 64px;
+        box-shadow: 16px 16px 0 $orange;
+    }
+
+    &__video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    &__overlay {
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        color: #fff;
+        font-family: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+        font-size: 13px;
+        font-weight: 600;
+        letter-spacing: 0.08em;
+        text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+
+        @include md {
+            font-size: 16px;
+        }
+    }
+
+    &__corner {
+        position: absolute;
+        width: 36px;
+        height: 36px;
+        border: 0 solid rgba(#fff, 0.9);
+
+        &--tl { top: 20px; left: 20px; border-top-width: 3px; border-left-width: 3px; }
+        &--tr { top: 20px; right: 20px; border-top-width: 3px; border-right-width: 3px; }
+        &--bl { bottom: 20px; left: 20px; border-bottom-width: 3px; border-left-width: 3px; }
+        &--br { bottom: 20px; right: 20px; border-bottom-width: 3px; border-right-width: 3px; }
+    }
+
+    &__rec {
+        position: absolute;
+        top: 30px;
+        left: 70px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+
+        &::before {
+            content: "";
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: $red;
+            animation: blink 1s steps(1) infinite;
+        }
+    }
+
+    &__timecode {
+        position: absolute;
+        top: 30px;
+        right: 70px;
+        font-variant-numeric: tabular-nums;
+    }
+
+    &__meta {
+        position: absolute;
+        bottom: 30px;
+        left: 70px;
+        opacity: 0.85;
+    }
+
+    &__battery {
+        position: absolute;
+        right: 74px;
+        bottom: 32px;
+        width: 30px;
+        height: 14px;
+        border: 2px solid #fff;
+        border-radius: 3px;
+
+        &::before {
+            content: "";
+            position: absolute;
+            inset: 2px 30% 2px 2px;
+            background: #fff;
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            top: 3px;
+            right: -5px;
+            width: 3px;
+            height: 4px;
+            background: #fff;
+        }
+    }
+
+    &__focus {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 64px;
+        height: 64px;
+        transform: translate(-50%, -50%);
+        border: 2px solid rgba($yellow, 0.9);
+        animation: focus-hunt 5s $ease infinite;
+
+        &::before,
+        &::after {
+            content: "";
+            position: absolute;
+            background: rgba($yellow, 0.9);
+        }
+
+        &::before { top: 50%; left: 50%; width: 12px; height: 2px; transform: translate(-50%, -50%); }
+        &::after { top: 50%; left: 50%; width: 2px; height: 12px; transform: translate(-50%, -50%); }
+    }
+
+    @media (max-width: 639px) {
+        &__meta,
+        &__battery {
+            display: none;
+        }
+
+        &__rec { left: 32px; top: 28px; }
+        &__timecode { right: 32px; top: 28px; }
+        &__corner { width: 22px; height: 22px; }
+    }
+}
+
+@keyframes focus-hunt {
+    0%, 100% { transform: translate(-50%, -50%) scale(1); }
+    10% { transform: translate(-50%, -50%) scale(1.25); }
+    18% { transform: translate(-50%, -50%) scale(0.9); }
+    24% { transform: translate(-50%, -50%) scale(1); }
+    60% { transform: translate(-30%, -60%) scale(1); }
+    70% { transform: translate(-30%, -60%) scale(1.2); }
+    76% { transform: translate(-30%, -60%) scale(1); }
+}
+
+.ticker {
+    position: relative;
+    z-index: 2;
+    margin: 72px -5vw 0;
+    padding: 18px 0;
+    overflow: hidden;
+    border-block: 3px solid $ink;
+    background: $yellow;
+    transform: rotate(-2deg);
+
+    @include md {
+        margin-top: 96px;
+    }
+
+    &__track {
+        display: flex;
+        width: max-content;
+        animation: ticker 40s linear infinite;
+
+        span {
+            padding-right: 0.5em;
+            white-space: nowrap;
+            font-size: clamp(24px, 4vw, 44px);
+            line-height: 1;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            text-transform: uppercase;
+        }
+    }
+
+    &:hover &__track {
+        animation-play-state: paused;
+    }
+}
+
+@keyframes ticker {
+    to { transform: translateX(-50%); }
+}

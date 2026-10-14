@@ -1,0 +1,12 @@
+{
+    "label": "_Navigation",
+    "layout": true,
+    "copy": {
+        "service_label": { "label": "Link: Gewerke" },
+        "work_label": { "label": "Link: Referenzen" },
+        "contact_label": { "label": "Link: Kontakt" }
+    },
+    "data": {
+        "full": { "label": "Volle Navigation anzeigen", "type": "boolean" }
+    }
+}

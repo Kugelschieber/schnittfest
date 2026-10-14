@@ -1,0 +1,14 @@
+{
+    "label": "Intro (Hero-Video)",
+    "copy": {
+        "kicker": { "label": "Dachzeile" },
+        "headline": { "label": "Überschrift" },
+        "cta_label": { "label": "Button-Text" },
+        "cta_href": { "label": "Button-Link" },
+        "ticker": { "label": "Laufband-Text" }
+    },
+    "data": {
+        "video": { "label": "Video", "type": "file" },
+        "poster": { "label": "Vorschaubild", "type": "img" }
+    }
+}

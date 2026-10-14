@@ -1,6 +1,16 @@
-<section id="instagram" class="section-instagram">
-    <div class="container">
-        <script src="https://cdn.lightwidget.com/widgets/lightwidget.js"></script>
-        <iframe src="https://cdn.lightwidget.com/widgets/ea2fc8dd2d55541dbafdc312dbe28aee.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width:100%;border:0;overflow:hidden;"></iframe>
+{{- $headline := default (copy .Page .Content "headline") "Hinter den Kulissen" -}}
+{{- $widget := default (get .Content "widget") "https://cdn.lightwidget.com/widgets/ea2fc8dd2d55541dbafdc312dbe28aee.html" -}}
+{{- $profile := default (get .Content "profile") "https://instagram.com/schnittfest.gmbh" -}}
+
+<section class="insta" id="instagram" data-shifu-element="{{ .Content.Position }}">
+    <div class="insta__inner">
+        <div class="insta__head" data-component="reveal">
+            <h2 class="section-title"><span class="section-title__nr">03</span>{{ $headline }}</h2>
+            <a class="button button--outline" href="{{ $profile }}" target="_blank" rel="noopener">@schnittfest.gmbh</a>
+        </div>
+        <div class="insta__frame" data-component="reveal">
+            <script src="https://cdn.lightwidget.com/widgets/lightwidget.js"></script>
+            <iframe src="{{ $widget }}" scrolling="no" allowtransparency="true" class="lightwidget-widget insta__widget" title="Instagram"></iframe>
+        </div>
     </div>
 </section>

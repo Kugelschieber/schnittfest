@@ -1,0 +1,11 @@
+{{- $title := copy .Page .Content "title" -}}
+{{- $text := copy .Page .Content "text" -}}
+{{- $color := default (get .Content "color") "red" -}}
+
+<article class="slate slate--{{ $color }}" data-component="reveal" data-shifu-element="{{ .Content.Position }}">
+    <div class="slate__clapper" aria-hidden="true"></div>
+    <div class="slate__body">
+        {{ with $title }}<h3 class="slate__title">{{ . }}</h3>{{ end }}
+        {{ with $text }}<p class="slate__text">{{ . }}</p>{{ end }}
+    </div>
+</article>

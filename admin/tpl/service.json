@@ -1,0 +1,14 @@
+{
+    "label": "Gewerke",
+    "content": {
+        "items": { "label": "Gewerke", "tpl_filter": ["service_item"] }
+    },
+    "copy": {
+        "headline": { "label": "Überschrift" },
+        "text": { "label": "Text", "type": "html" },
+        "image_caption": { "label": "Bildunterschrift" }
+    },
+    "data": {
+        "image": { "label": "Bild", "type": "img" }
+    }
+}
