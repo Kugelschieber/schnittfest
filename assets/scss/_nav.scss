@@ -25,9 +25,6 @@
         background: $cream;
         box-shadow: 4px 4px 0 $ink;
         text-decoration: none;
-        font-size: 22px;
-        font-weight: 800;
-        letter-spacing: -0.02em;
         transition: transform 0.3s $ease;
 
         &:hover {
@@ -44,22 +41,10 @@
         animation: rec-pulse 1.6s infinite;
     }
 
-    &__word {
-        display: inline-flex;
-        align-items: center;
-    }
-
-    &__cut {
-        display: inline-block;
-        margin: 0 1px;
-        color: $orange;
-        font-size: 0.75em;
-        transform: rotate(-90deg);
-        transition: transform 0.5s $ease;
-    }
-
-    &__brand:hover &__cut {
-        transform: rotate(-90deg) translateY(-3px) scaleX(0.6);
+    &__logo {
+        display: block;
+        width: auto;
+        height: 28px;
     }
 
     &__toggle {

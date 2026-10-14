@@ -1,13 +1,15 @@
 {{- $headline := default (copy .Page .Content "headline") "Und… Action?" -}}
 {{- $text := default (copy .Page .Content "text") "Erzähl uns von deiner Idee – wir machen einen Film daraus." -}}
 {{- $email := default (get .Content "email") "hi@schnittfest.gmbh" -}}
-{{- $phone := default (get .Content "phone") "+49 176 93124984" -}}
+{{- $phone := get .Content "phone" -}}
 {{- $instagram := default (get .Content "instagram") "https://instagram.com/schnittfest.gmbh" -}}
 {{- $vimeo := default (get .Content "vimeo") "https://vimeo.com/schnittfest" -}}
 {{- $copyright := default (copy .Page .Content "copyright") "Schnittfest GmbH" -}}
 
 <footer class="footer" id="footer" data-shifu-element="{{ .Content.Position }}">
     <div class="footer__inner">
+        <img class="footer__logo" src="/static/img/logo-weiss.png" alt="Schnittfest" width="2756" height="661" loading="lazy" />
+
         <div class="footer__cta" data-component="reveal">
             <h2 class="footer__headline">{{ $headline }}</h2>
             <p class="footer__text">{{ $text }}</p>
@@ -17,7 +19,7 @@
         </div>
 
         <dl class="credits" data-component="reveal">
-            <div class="credits__row"><dt>Telefon</dt><dd><a href="tel:{{ $phone | replace " " "" }}">{{ $phone }}</a></dd></div>
+            {{ with $phone }}<div class="credits__row"><dt>Telefon</dt><dd><a href="tel:{{ . | replace " " "" }}">{{ . }}</a></dd></div>{{ end }}
             <div class="credits__row"><dt>E-Mail</dt><dd><a href="mailto:{{ $email }}">{{ $email }}</a></dd></div>
             <div class="credits__row"><dt>Instagram</dt><dd><a href="{{ $instagram }}" target="_blank" rel="noopener">schnittfest.gmbh</a></dd></div>
             <div class="credits__row"><dt>Vimeo</dt><dd><a href="{{ $vimeo }}" target="_blank" rel="noopener">schnittfest</a></dd></div>

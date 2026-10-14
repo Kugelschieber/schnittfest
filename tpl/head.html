@@ -1,5 +1,5 @@
 {{- $title := default (copy .Page .Content "title") "Videoproduktion in OWL | Imagefilm, Animation & Sound | Schnittfest" -}}
-{{- $description := default (copy .Page .Content "meta_description") "Schnittfest ist eure Videoproduktion aus Rheda-Wiedenbrück bei Bielefeld: Imagefilme, Recruiting-Videos, Commercials, Animation und Sounddesign – vom Konzept bis zum fertigen Film." -}}
+{{- $description := default (copy .Page .Content "meta_description") "Schnittfest ist eure Videoproduktion aus Altenbeken bei Paderborn: Imagefilme, Recruiting-Videos, Commercials, Animation und Sounddesign – vom Konzept bis zum fertigen Film." -}}
 {{- $robots := default (get .Content "robots") "index,follow" -}}
 <!DOCTYPE html>
 <html lang="{{ .Page.Language }}">
@@ -45,19 +45,19 @@
         "name": "Schnittfest GmbH",
         "description": "Videoproduktion für Imagefilme, Commercials, Animation und Sound in Ostwestfalen-Lippe.",
         "url": "{{ hostname }}/",
-        "logo": "{{ hostname }}/static/favicon/favicon512x512.png",
+        "logo": "{{ hostname }}/static/img/logo-schwarz.png",
         "image": "{{ hostname }}/static/1.jpg",
         "email": "hi@schnittfest.gmbh",
-        "telephone": "+49 5242 9079902",
+        "telephone": "+49 176 93124984",
         "address": {
             "@type": "PostalAddress",
-            "streetAddress": "Schulbusch 29",
-            "postalCode": "33378",
-            "addressLocality": "Rheda-Wiedenbrück",
+            "streetAddress": "Eichenweg 3",
+            "postalCode": "33184",
+            "addressLocality": "Altenbeken",
             "addressRegion": "NRW",
             "addressCountry": "DE"
         },
-        "areaServed": ["Rheda-Wiedenbrück", "Gütersloh", "Bielefeld", "Ostwestfalen-Lippe", "Deutschland"],
+        "areaServed": ["Altenbeken", "Paderborn", "Bielefeld", "Ostwestfalen-Lippe", "Deutschland"],
         "sameAs": ["https://instagram.com/schnittfest.gmbh", "https://vimeo.com/schnittfest"]
     }
     </script>

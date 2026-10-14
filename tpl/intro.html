@@ -3,7 +3,7 @@
 {{- $text := copy .Page .Content "text" -}}
 {{- $ctaLabel := default (copy .Page .Content "cta_label") "Projekt anfragen" -}}
 {{- $ctaHref := default (copy .Page .Content "cta_href") "mailto:hi@schnittfest.gmbh" -}}
-{{- $ticker := default (copy .Page .Content "ticker") "Film ✦ Animation ✦ Sound ✦ Schnitt ✦ Color Grading ✦ Drohne ✦ Imagefilm ✦ Commercial ✦" -}}
+{{- $ticker := copy .Page .Content "ticker" -}}
 {{- $video := default (get .Content "video") "/static/hero.mp4" -}}
 {{- $poster := default (get .Content "poster") "/static/1.jpg" -}}
 
@@ -32,9 +32,11 @@
         </div>
     </div>
 
+    {{ with $ticker }}
     <div class="ticker" aria-hidden="true">
         <div class="ticker__track">
-            <span>{{ $ticker }}</span><span>{{ $ticker }}</span><span>{{ $ticker }}</span><span>{{ $ticker }}</span>
+            <span>{{ . }}</span><span>{{ . }}</span><span>{{ . }}</span><span>{{ . }}</span>
         </div>
     </div>
+    {{ end }}
 </section>
