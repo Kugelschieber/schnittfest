@@ -1,0 +1,10 @@
+{
+    "label": "Ablauf",
+    "content": {
+        "steps": { "label": "Schritte", "tpl_filter": ["process_step"] }
+    },
+    "copy": {
+        "headline": { "label": "Überschrift" },
+        "text": { "label": "Text", "type": "html" }
+    }
+}

@@ -1,0 +1,114 @@
+@use "variables" as *;
+
+.process {
+    padding: 0 0 120px;
+
+    @include md {
+        padding-bottom: 160px;
+    }
+
+    &__inner {
+        @include inner;
+    }
+
+    &__head {
+        display: grid;
+        gap: 24px;
+        margin-bottom: 64px;
+
+        @include md {
+            grid-template-columns: 1fr 1fr;
+            align-items: end;
+        }
+    }
+
+    &__text {
+        max-width: 46ch;
+        font-size: 20px;
+    }
+
+    &__steps {
+        counter-reset: frame;
+        display: grid;
+        gap: 28px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+
+        @include sm {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @include lg {
+            grid-template-columns: repeat(4, 1fr);
+        }
+    }
+}
+
+// storyboard frame
+.frame {
+    --frame-color: #{$yellow};
+    counter-increment: frame;
+    position: relative;
+    padding: 28px 24px 32px;
+    border: 3px solid $ink;
+    border-radius: $radius;
+    background: $cream;
+    box-shadow: 8px 8px 0 var(--frame-color);
+    transition: rotate 0.4s $ease, translate 0.4s $ease;
+
+    @each $name, $color in $colors {
+        &--#{$name} {
+            --frame-color: #{$color};
+        }
+    }
+
+    &:nth-child(odd) { rotate: -1.2deg; }
+    &:nth-child(even) { rotate: 1.2deg; }
+
+    &:hover {
+        rotate: 0deg;
+        translate: 0 -6px;
+    }
+
+    // dashed arrow to the next frame
+    @include lg {
+        &:not(:last-child)::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            right: -26px;
+            width: 22px;
+            border-top: 3px dashed $ink;
+        }
+    }
+
+    &__nr {
+        display: grid;
+        place-items: center;
+        width: 56px;
+        height: 56px;
+        margin-bottom: 20px;
+        border: 3px solid $ink;
+        border-radius: 50%;
+        background: var(--frame-color);
+        font-size: 22px;
+        font-weight: 800;
+
+        &::before {
+            content: counter(frame);
+        }
+    }
+
+    &__title {
+        font-size: 24px;
+        line-height: 1.2;
+        font-weight: 800;
+        letter-spacing: -0.02em;
+    }
+
+    &__text {
+        margin-top: 10px;
+        font-size: 17px;
+    }
+}

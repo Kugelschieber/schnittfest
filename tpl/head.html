@@ -1,5 +1,6 @@
-{{- $title := default (copy .Page .Content "title") "Schnittfest – Film, auf den Frame genau." -}}
-{{- $description := default (copy .Page .Content "meta_description") "Film, Animation und Sound aus Ostwestfalen. Schnittfest produziert Imagefilme, Commercials und Kampagnen – auf den Frame genau." -}}
+{{- $title := default (copy .Page .Content "title") "Videoproduktion in OWL | Imagefilm, Animation & Sound | Schnittfest" -}}
+{{- $description := default (copy .Page .Content "meta_description") "Schnittfest ist eure Videoproduktion aus Rheda-Wiedenbrück bei Bielefeld: Imagefilme, Recruiting-Videos, Commercials, Animation und Sounddesign – vom Konzept bis zum fertigen Film." -}}
+{{- $robots := default (get .Content "robots") "index,follow" -}}
 <!DOCTYPE html>
 <html lang="{{ .Page.Language }}">
 <head>
@@ -8,6 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{{ $title }}</title>
     <meta name="description" content="{{ $description }}" />
+    <meta name="robots" content="{{ $robots }}" />
     <meta name="copyright" content="Schnittfest GmbH" />
     <meta name="author" content="Emvi Software GmbH" />
     <meta name="theme-color" content="#0e0c0b" />
@@ -18,6 +20,9 @@
     <meta name="twitter:title" content="{{ $title }}" />
     <meta name="twitter:description" content="{{ $description }}" />
     <meta name="twitter:image" content="{{ hostname }}/static/1.jpg" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="de_DE" />
+    <meta property="og:site_name" content="Schnittfest" />
     <meta property="og:url" content="{{ .Page.CanonicalLink }}" />
     <meta property="og:title" content="{{ $title }}" />
     <meta property="og:description" content="{{ $description }}" />
@@ -32,6 +37,30 @@
     <link rel="stylesheet" href="/static/web/manrope.css" />
     <link rel="stylesheet" href="/static/web/main.css?v={{ .CMS.LastUpdate }}" />
     <script defer src="/static/web/main.min.js?v={{ .CMS.LastUpdate }}"></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "@id": "{{ hostname }}/#organization",
+        "name": "Schnittfest GmbH",
+        "description": "Videoproduktion für Imagefilme, Commercials, Animation und Sound in Ostwestfalen-Lippe.",
+        "url": "{{ hostname }}/",
+        "logo": "{{ hostname }}/static/favicon/favicon512x512.png",
+        "image": "{{ hostname }}/static/1.jpg",
+        "email": "hi@schnittfest.gmbh",
+        "telephone": "+49 5242 9079902",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Schulbusch 29",
+            "postalCode": "33378",
+            "addressLocality": "Rheda-Wiedenbrück",
+            "addressRegion": "NRW",
+            "addressCountry": "DE"
+        },
+        "areaServed": ["Rheda-Wiedenbrück", "Gütersloh", "Bielefeld", "Ostwestfalen-Lippe", "Deutschland"],
+        "sameAs": ["https://instagram.com/schnittfest.gmbh", "https://vimeo.com/schnittfest"]
+    }
+    </script>
     {{ adminHead .Page }}
 </head>
 <body>

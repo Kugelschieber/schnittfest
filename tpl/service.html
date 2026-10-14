@@ -6,7 +6,7 @@
 <section class="service" id="service" data-shifu-element="{{ .Content.Position }}">
     <div class="service__inner">
         <div class="service__head" data-component="reveal">
-            <h2 class="section-title"><span class="section-title__nr">01</span>{{ $headline }}</h2>
+            <h2 class="section-title"><span class="section-title__nr" aria-hidden="true"></span>{{ $headline }}</h2>
             {{ with $text }}<div class="service__text">{{ html . }}</div>{{ end }}
         </div>
         <div class="service__grid">

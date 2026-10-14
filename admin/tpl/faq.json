@@ -1,0 +1,10 @@
+{
+    "label": "FAQ",
+    "content": {
+        "items": { "label": "Fragen", "tpl_filter": ["faq_item"] }
+    },
+    "copy": {
+        "headline": { "label": "Überschrift" },
+        "text": { "label": "Text", "type": "html" }
+    }
+}

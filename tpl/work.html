@@ -5,7 +5,7 @@
     <div class="filmstrip" aria-hidden="true"></div>
     <div class="work__inner">
         <div class="work__head" data-component="reveal">
-            <h2 class="section-title section-title--light"><span class="section-title__nr">02</span>{{ $headline }}</h2>
+            <h2 class="section-title section-title--light"><span class="section-title__nr" aria-hidden="true"></span>{{ $headline }}</h2>
             {{ with $text }}<div class="work__text">{{ html . }}</div>{{ end }}
         </div>
         <div class="work__list">

@@ -1,4 +1,5 @@
 {
+    "display_name": "Startseite",
     "path": {
         "de": "/"
     },
@@ -8,7 +9,13 @@
     "content": {
         "content": [
             {
-                "ref": "head"
+                "ref": "head",
+                "copy": {
+                    "de": {
+                        "title": "Videoproduktion in OWL | Imagefilm & Animation | Schnittfest",
+                        "meta_description": "Schnittfest ist eure Videoproduktion aus Rheda-Wiedenbrück bei Bielefeld: Imagefilme, Recruiting-Videos, Werbefilme, Animation und Sounddesign – vom Konzept bis zum fertigen Film."
+                    }
+                }
             },
             {
                 "ref": "nav",
@@ -21,10 +28,12 @@
                 "copy": {
                     "de": {
                         "kicker": "Videoproduktion aus Ostwestfalen",
-                        "headline": "Film, auf den Frame genau.",
+                        "headline": "Videoproduktion, auf den Frame genau.",
+                        "text": "<div>Wir sind <strong>Schnittfest</strong> – eine Filmproduktion aus Rheda-Wiedenbrück bei Bielefeld. Wir produzieren <strong>Imagefilme, Werbefilme, Recruiting-Videos und Animationen</strong> für Unternehmen in OWL und ganz Deutschland.</div>",
                         "cta_label": "Projekt anfragen",
                         "cta_href": "mailto:hi@schnittfest.gmbh",
-                        "ticker": "Film ✦ Animation ✦ Sound ✦ Schnitt ✦ Color Grading ✦ Imagefilm ✦ Commercial ✦"
+                        "ticker": "Imagefilm ✦ Werbefilm ✦ Recruiting-Video ✦ Animation ✦ Sounddesign ✦ Schnitt ✦ Color Grading ✦ Eventfilm ✦",
+                        "video_label": "Showreel der Videoproduktion Schnittfest"
                     }
                 },
                 "data": {
@@ -37,8 +46,8 @@
                 "tpl": "service",
                 "copy": {
                     "de": {
-                        "headline": "Gewerke",
-                        "text": "<div>Von der ersten Idee bis zum finalen Frame: Wir planen, drehen, animieren und vertonen – alles aus einer Hand.</div>",
+                        "headline": "Film, Animation & Sound",
+                        "text": "<div>Von der ersten Idee bis zum finalen Frame: Wir konzipieren, drehen, animieren und vertonen – alles aus einer Hand. So entsteht ein Video, das deine Marke, deine Produkte oder dein Team genau richtig in Szene setzt.</div>",
                         "image_caption": "Am Set, irgendwo zwischen Take 7 und 8."
                     }
                 },
@@ -52,7 +61,7 @@
                             "copy": {
                                 "de": {
                                     "title": "Film",
-                                    "text": "sleep.shoot.eat.repeat."
+                                    "text": "sleep.shoot.eat.repeat. Imagefilme, Unternehmensfilme, Werbespots und Eventfilme – mit Kamera, Licht und Crew, die wissen, was sie tun."
                                 }
                             },
                             "data": {
@@ -65,7 +74,7 @@
                             "copy": {
                                 "de": {
                                     "title": "Animation",
-                                    "text": "Herausstechen und Welten erschaffen."
+                                    "text": "Herausstechen und Welten erschaffen: Motion Design, 2D/3D-Animation und Erklärvideos, die Komplexes einfach machen."
                                 }
                             },
                             "data": {
@@ -78,7 +87,7 @@
                             "copy": {
                                 "de": {
                                     "title": "Sound",
-                                    "text": "Keine Musik wäre wie Butter ohne Brot."
+                                    "text": "Keine Musik wäre wie Butter ohne Brot. Sounddesign, Musik, Sprachaufnahmen und Mischung für den perfekten Ton."
                                 }
                             },
                             "data": {
@@ -90,120 +99,248 @@
                 }
             },
             {
+                "tpl": "process",
+                "copy": {
+                    "de": {
+                        "headline": "So entsteht dein Film",
+                        "text": "<div>Klarer Ablauf, feste Ansprechpartner, keine Überraschungen – in vier Schritten zur fertigen Videoproduktion.</div>"
+                    }
+                },
+                "content": {
+                    "steps": [
+                        {
+                            "tpl": "process_step",
+                            "copy": {
+                                "de": {
+                                    "title": "Idee & Konzept",
+                                    "text": "Wir hören zu, entwickeln die Story und planen Drehbuch, Storyboard und Budget – damit dein Video ein klares Ziel hat."
+                                }
+                            },
+                            "data": {
+                                "color": "yellow"
+                            },
+                            "content": {}
+                        },
+                        {
+                            "tpl": "process_step",
+                            "copy": {
+                                "de": {
+                                    "title": "Dreh & Produktion",
+                                    "text": "Kamera, Licht, Ton und Crew: Wir drehen im Studio, im Unternehmen oder on location – in OWL und überall sonst."
+                                }
+                            },
+                            "data": {
+                                "color": "orange"
+                            },
+                            "content": {}
+                        },
+                        {
+                            "tpl": "process_step",
+                            "copy": {
+                                "de": {
+                                    "title": "Postproduktion",
+                                    "text": "Schnitt, Color Grading, Motion Design und Sounddesign machen aus dem Material einen Film, der hängen bleibt."
+                                }
+                            },
+                            "data": {
+                                "color": "red"
+                            },
+                            "content": {}
+                        },
+                        {
+                            "tpl": "process_step",
+                            "copy": {
+                                "de": {
+                                    "title": "Auslieferung",
+                                    "text": "Du bekommst deinen Film in allen Formaten, die du brauchst – für Website, Social Media, Messe oder Kino."
+                                }
+                            },
+                            "data": {
+                                "color": "pink"
+                            },
+                            "content": {}
+                        }
+                    ]
+                }
+            },
+            {
                 "tpl": "work",
+                "copy": {
+                    "de": {
+                        "headline": "Referenzen",
+                        "text": "<div>Popcorn bereit? Eine Auswahl unserer Imagefilme, Commercials und Recruiting-Videos für Kunden wie Schüco, GOLDBECK und DansArt.</div>"
+                    }
+                },
                 "content": {
                     "content": [
                         {
                             "tpl": "work_entry",
+                            "copy": {
+                                "de": {
+                                    "h2": "Imagefilm für Schüco: Bauprojekt in Schweden",
+                                    "text": "Für die Reihe „Schüco Stories“ haben wir ein Bauprojekt auf den Schären vor Stockholm filmisch begleitet – von der ersten Planung bis zum fertigen Gebäude. Eine Langzeit-Dokumentation als Imagefilm."
+                                }
+                            },
                             "data": {
                                 "video": "https://www.youtube.com/embed/6z9AUO9lqBs"
                             },
-                            "copy": {
-                                "de": {
-                                    "h2": "Imagefilm",
-                                    "text": "Schüco Stories auf den schwedischen Inseln in der Nähe von Stockholm. Bei diesem Bauprojekt wurde das komplette vorhaben von der Entstehung bis zum fertigen Objekt filmisch begleitet."
-                                }
-                            },
                             "content": {}
                         },
                         {
                             "tpl": "work_entry",
+                            "copy": {
+                                "de": {
+                                    "h2": "Kulturfilm für DansArt Bielefeld",
+                                    "text": "Seit 25 Jahren bringt DansArt Tanz und Kultur nach Bielefeld: vier Tanzstudios, ein eigenes Theater, Ausbildung, Festivals und Konzerte. Unser Artwork-Film fängt Bewegung, Musik und Atmosphäre ein."
+                                }
+                            },
                             "data": {
                                 "video": "https://www.youtube.com/embed/AnKUnt_qr0I"
                             },
-                            "copy": {
-                                "de": {
-                                    "h2": "Artwork Film",
-                                    "text": "Seit 25 Jahren bringt DansArt Tanz und Kultur nach Bielefeld. In vier Tanzstudios und einem eigenen Theater finden regelmäßig Tanzkurse, Ausbildungen für angehende Profitänzer *innen, Festivals, Workshops, Performances und Konzerte statt."
-                                }
-                            },
                             "content": {}
                         },
                         {
                             "tpl": "work_entry",
+                            "copy": {
+                                "de": {
+                                    "h2": "Unternehmensfilm für H.O. Schlüter Metallbau",
+                                    "text": "Neubau, Erweiterung und Renovation: Im Unternehmensfilm stellt sich der Metallbau H.O. Schlüter aus Lübz vor – Partner der Schüco International KG."
+                                }
+                            },
                             "data": {
                                 "video": "https://www.youtube.com/embed/ZlRCoYe9G20"
                             },
-                            "copy": {
-                                "de": {
-                                    "h2": "Imagefilm",
-                                    "text": "Neubau, Erweiterung und Renovation – das sind die Geschäftsfelder von H.O. Schlüter. Die H.O. Schlüter GmbH arbeitet als Partner zusammen mit Schüco International KG. Der Metallbau Lübz stellt sich in diesem Unternehmensfilm vor."
-                                }
-                            },
                             "content": {}
                         },
                         {
                             "tpl": "work_entry",
+                            "copy": {
+                                "de": {
+                                    "h2": "Commercial für ESDI EV Technologies",
+                                    "text": "ESDI EV baut Klassiker wie VW Käfer, Porsche und Mini Cooper mit Tesla- und Nissan-Leaf-Technik zu Elektrofahrzeugen um. Unser Werbefilm zeigt Handwerk, Technik und Fahrspaß."
+                                }
+                            },
                             "data": {
                                 "video": "https://www.youtube.com/embed/nCNS4veOjBY"
                             },
-                            "copy": {
-                                "de": {
-                                    "h2": "Commercial",
-                                    "text": "Umbauten von Verbrennern zu Elektrofahrzeugen. ESDI EV Technologies ist eine Firma, die sich auf dem Schwerpunkt Elektroumbauten fokussiert hat. Mit Tesla-Technik, Nissan Leaf oder vielen weiteren baut ESDI EV VW Käfer, Porsche, Mini Cooper und mehr zu Elektrofahrzeugen."
-                                }
-                            },
                             "content": {}
                         },
                         {
                             "tpl": "work_entry",
+                            "copy": {
+                                "de": {
+                                    "h2": "Produktfilm für GOLDBECK & Schüco",
+                                    "text": "Wie entsteht ein Fenstersystem? Der Produktfilm zeigt Entwicklung und Fertigung des Schüco AWE80 für GOLDBECK in Bielefeld."
+                                }
+                            },
                             "data": {
                                 "video": "https://www.youtube.com/embed/sFjOfG-5cIE"
                             },
-                            "copy": {
-                                "de": {
-                                    "h2": "Imagefilm",
-                                    "text": "GOLDBECK und Schüco, das Fenstersystem AWE80 in der Entwicklung und Produktion in Bielefeld."
-                                }
-                            },
                             "content": {}
                         },
                         {
                             "tpl": "work_entry",
+                            "copy": {
+                                "de": {
+                                    "h2": "Porträtfilm: Digitalisierung im Metallbau",
+                                    "text": "Industrie 4.0 zum Anfassen: Ein Porträtfilm darüber, wie digitale Prozesse den Alltag im Metallbau verändern."
+                                }
+                            },
                             "data": {
                                 "video": "https://www.youtube.com/embed/ktjlpv6j-Fw"
                             },
-                            "copy": {
-                                "de": {
-                                    "h2": "Porträtfilm",
-                                    "text": "Digitalisierung im Metallbau - Die berühmt-berüchtigte Industrie 4.0."
-                                }
-                            },
                             "content": {}
                         },
                         {
                             "tpl": "work_entry",
+                            "copy": {
+                                "de": {
+                                    "h2": "Recruiting-Video für Azubis im Metallbau",
+                                    "text": "Kampagne zur Ausbildungsplatz-Suche: Unser Recruitingfilm stellt die Berufe Metallbauer*in, Metalltechnik, Technische*r Systemplaner*in und Büromanagement vor – authentisch und auf Augenhöhe."
+                                }
+                            },
                             "data": {
                                 "video": "https://www.youtube.com/embed/ji1ux1Y4Y_U"
                             },
+                            "content": {}
+                        },
+                        {
+                            "tpl": "work_entry",
                             "copy": {
                                 "de": {
-                                    "h2": "Kampagne",
-                                    "text": "Azubi Recruiting Film für die Berufe Metallbauer, Metalltechnik, Technischer Systemplaner, Büromanagement."
+                                    "h2": "Eventfilm: Karrieretag Familienunternehmen",
+                                    "text": "50 führende Familienunternehmen wie Miele, Hilti und Haribo trafen sich bei Schüco in Bielefeld. Unser Eventfilm fasst den Karrieretag kompakt zusammen."
+                                }
+                            },
+                            "data": {
+                                "video": "https://www.youtube.com/embed/b8ASQboLCO8"
+                            },
+                            "content": {}
+                        }
+                    ]
+                }
+            },
+            {
+                "tpl": "faq",
+                "copy": {
+                    "de": {
+                        "headline": "Häufige Fragen",
+                        "text": "<div>Deine Frage ist nicht dabei? Schreib uns an <a href=\"mailto:hi@schnittfest.gmbh\">hi@schnittfest.gmbh</a>.</div>"
+                    }
+                },
+                "content": {
+                    "items": [
+                        {
+                            "tpl": "faq_item",
+                            "copy": {
+                                "de": {
+                                    "question": "Was kostet ein Imagefilm?",
+                                    "answer": "<div>Das hängt von Umfang, Drehtagen, Crew und Postproduktion ab. Nach einem kurzen Gespräch bekommst du von uns ein transparentes, unverbindliches Angebot, das zu deinem Budget passt.</div>"
                                 }
                             },
                             "content": {}
                         },
                         {
-                            "tpl": "work_entry",
-                            "data": {
-                                "video": "https://www.youtube.com/embed/b8ASQboLCO8"
-                            },
+                            "tpl": "faq_item",
                             "copy": {
                                 "de": {
-                                    "h2": "Eventfilm",
-                                    "text": "50 führende Familienunternehmen aus ganz Deutschland zum Karrieretag Familienunternehmen in Bielefeld bei Schüco - Miele, Hilti, Haribo und viele mehr."
+                                    "question": "Wie lange dauert eine Videoproduktion?",
+                                    "answer": "<div>Von der ersten Idee bis zum fertigen Film vergehen meist einige Wochen. Kleinere Projekte wie Social-Media-Clips oder Eventfilme sind oft deutlich schneller fertig. Den genauen Zeitplan legen wir gemeinsam fest.</div>"
+                                }
+                            },
+                            "content": {}
+                        },
+                        {
+                            "tpl": "faq_item",
+                            "copy": {
+                                "de": {
+                                    "question": "Wo dreht ihr?",
+                                    "answer": "<div>Unser Sitz ist in Rheda-Wiedenbrück zwischen Gütersloh und Bielefeld. Wir drehen in ganz Ostwestfalen-Lippe, deutschlandweit und auch international.</div>"
+                                }
+                            },
+                            "content": {}
+                        },
+                        {
+                            "tpl": "faq_item",
+                            "copy": {
+                                "de": {
+                                    "question": "Welche Videoformate produziert ihr?",
+                                    "answer": "<div>Imagefilme, Unternehmens- und Produktfilme, Recruiting-Videos, Werbefilme und Commercials, Eventfilme sowie 2D/3D-Animation und Erklärvideos – inklusive Musik und Sounddesign.</div>"
+                                }
+                            },
+                            "content": {}
+                        },
+                        {
+                            "tpl": "faq_item",
+                            "copy": {
+                                "de": {
+                                    "question": "Bekomme ich auch Schnittfassungen für Social Media?",
+                                    "answer": "<div>Auf Wunsch liefern wir neben dem Hauptfilm kurze Cut-downs in Hoch- und Querformat für Instagram, LinkedIn, TikTok oder YouTube.</div>"
                                 }
                             },
                             "content": {}
                         }
                     ]
-                },
-                "copy": {
-                    "de": {
-                        "headline": "Referenzen",
-                        "text": "<div>Popcorn bereit? Eine Auswahl unserer Lieblingsprojekte.</div>"
-                    }
                 }
             },
             {

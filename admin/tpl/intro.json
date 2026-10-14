@@ -2,7 +2,9 @@
     "label": "Intro (Hero-Video)",
     "copy": {
         "kicker": { "label": "Dachzeile" },
-        "headline": { "label": "Überschrift" },
+        "headline": { "label": "Überschrift (H1)" },
+        "text": { "label": "Einleitungstext", "type": "html" },
+        "video_label": { "label": "Video-Beschreibung (Barrierefreiheit)" },
         "cta_label": { "label": "Button-Text" },
         "cta_href": { "label": "Button-Link" },
         "ticker": { "label": "Laufband-Text" }

@@ -1,0 +1,14 @@
+{
+    "label": "Ablauf-Schritt",
+    "copy": {
+        "title": { "label": "Titel" },
+        "text": { "label": "Text" }
+    },
+    "data": {
+        "color": {
+            "label": "Farbe",
+            "type": "select",
+            "options": { "yellow": "Gelb", "orange": "Orange", "red": "Rot", "pink": "Pink", "purple": "Lila" }
+        }
+    }
+}

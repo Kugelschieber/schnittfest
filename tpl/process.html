@@ -1,0 +1,15 @@
+{{- $headline := default (copy .Page .Content "headline") "Ablauf" -}}
+{{- $text := copy .Page .Content "text" -}}
+
+<section class="process" id="ablauf" data-shifu-element="{{ .Content.Position }}">
+    <div class="process__inner">
+        <div class="process__head" data-component="reveal">
+            <h2 class="section-title"><span class="section-title__nr" aria-hidden="true"></span>{{ $headline }}</h2>
+            {{ with $text }}<div class="process__text">{{ html . }}</div>{{ end }}
+        </div>
+        <ol class="process__steps">
+            {{ .CMS.Render .Args .Page (fmt "%s.steps" .Content.Position) (index .Content.Content "steps") }}
+            <slot name="{{ .Content.Position }}/steps"></slot>
+        </ol>
+    </div>
+</section>

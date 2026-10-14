@@ -7,11 +7,29 @@
     },
     "content": {
         "content": [
-            {"ref": "head"},
-            {"ref": "nav"},
-            {"tpl": "terms"},
-            {"ref": "footer"},
-            {"ref": "end"}
+            {
+                "ref": "head",
+                "copy": {
+                    "de": {
+                        "title": "AGB | Schnittfest GmbH – Videoproduktion & Verleih",
+                        "meta_description": "Allgemeine Geschäftsbedingungen der Schnittfest GmbH für Videoproduktion und Geräteverleih (Rentalfest)."
+                    }
+                }
+            },
+            {
+                "ref": "nav"
+            },
+            {
+                "tpl": "terms",
+                "content": {}
+            },
+            {
+                "ref": "footer"
+            },
+            {
+                "ref": "end"
+            }
         ]
-    }
+    },
+    "display_name": "AGB"
 }

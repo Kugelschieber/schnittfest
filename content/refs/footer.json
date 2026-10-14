@@ -1,3 +1,17 @@
 {
-    "tpl": "footer"
+    "tpl": "footer",
+    "copy": {
+        "de": {
+            "headline": "Und… Action?",
+            "text": "Du planst einen Imagefilm, ein Recruiting-Video oder eine Kampagne? Erzähl uns von deiner Idee – wir machen einen Film daraus.",
+            "copyright": "Schnittfest GmbH · Videoproduktion in Rheda-Wiedenbrück"
+        }
+    },
+    "data": {
+        "email": "hi@schnittfest.gmbh",
+        "phone": "+49 176 93124984",
+        "instagram": "https://instagram.com/schnittfest.gmbh",
+        "vimeo": "https://vimeo.com/schnittfest"
+    },
+    "content": {}
 }

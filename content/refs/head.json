@@ -1,3 +1,13 @@
 {
-    "tpl": "head"
+    "tpl": "head",
+    "copy": {
+        "de": {
+            "title": "Videoproduktion in OWL | Imagefilm & Animation | Schnittfest",
+            "meta_description": "Schnittfest ist eure Videoproduktion aus Rheda-Wiedenbrück bei Bielefeld: Imagefilme, Recruiting-Videos, Werbefilme, Animation und Sounddesign."
+        }
+    },
+    "data": {
+        "robots": "index,follow"
+    },
+    "content": {}
 }

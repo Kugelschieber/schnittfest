@@ -2,6 +2,8 @@
 
 .intro {
     position: relative;
+    // the rotated, wider-than-viewport ticker must not create horizontal scrolling
+    overflow-x: clip;
     padding: 48px 0 0;
 
     @include md {
@@ -38,8 +40,9 @@
     }
 
     &__headline {
-        max-width: 12ch;
-        font-size: clamp(52px, 11vw, 168px);
+        max-width: 16ch;
+        font-size: clamp(34px, 8.6vw, 150px);
+        hyphens: auto;
         line-height: 0.92;
         // background-clip: text only paints inside the box; keep descenders (g, p, …) visible
         padding-bottom: 0.3em;
@@ -51,6 +54,15 @@
         background-clip: text;
         color: transparent;
         -webkit-text-fill-color: transparent;
+    }
+
+    &__text {
+        max-width: 52ch;
+        margin-top: 28px;
+        font-size: clamp(18px, 1.6vw, 22px);
+        line-height: 1.55;
+
+        strong { font-weight: 800; }
     }
 
     &__cta {
@@ -83,8 +95,13 @@
     border-radius: $radius-lg;
     background: $ink;
     box-shadow: 10px 10px 0 $orange;
-    aspect-ratio: 16 / 9;
-    min-height: 320px;
+    // no min-height here: with aspect-ratio it is transferred to a min-width and overflows on small screens
+    width: 100%;
+    aspect-ratio: 4 / 3;
+
+    @include sm {
+        aspect-ratio: 16 / 9;
+    }
 
     @include md {
         margin-top: 64px;

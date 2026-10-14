@@ -1,5 +1,6 @@
 {{- $headline := default (copy .Page .Content "headline") "Film, auf den Frame genau." -}}
 {{- $kicker := default (copy .Page .Content "kicker") "Videoproduktion aus Ostwestfalen" -}}
+{{- $text := copy .Page .Content "text" -}}
 {{- $ctaLabel := default (copy .Page .Content "cta_label") "Projekt anfragen" -}}
 {{- $ctaHref := default (copy .Page .Content "cta_href") "mailto:hi@schnittfest.gmbh" -}}
 {{- $ticker := default (copy .Page .Content "ticker") "Film ✦ Animation ✦ Sound ✦ Schnitt ✦ Color Grading ✦ Drohne ✦ Imagefilm ✦ Commercial ✦" -}}
@@ -10,12 +11,13 @@
     <div class="intro__inner">
         <p class="intro__kicker" data-component="reveal"><span class="intro__kicker-dot"></span>{{ $kicker }}</p>
         <h1 class="intro__headline" data-component="reveal">{{ $headline }}</h1>
+        {{ with $text }}<div class="intro__text" data-component="reveal">{{ html . }}</div>{{ end }}
         <div class="intro__cta" data-component="reveal">
             <a class="button button--yellow" href="{{ $ctaHref }}"><span class="button__play" aria-hidden="true"></span>{{ $ctaLabel }}</a>
         </div>
 
         <div class="viewfinder" data-component="reveal">
-            <video class="viewfinder__video" src="{{ $video }}" poster="{{ $poster }}" autoplay loop muted playsinline></video>
+            <video class="viewfinder__video" aria-label="{{ default (copy .Page .Content "video_label") "Showreel von Schnittfest" }}" src="{{ $video }}" poster="{{ $poster }}" autoplay loop muted playsinline></video>
             <div class="viewfinder__overlay" aria-hidden="true">
                 <span class="viewfinder__corner viewfinder__corner--tl"></span>
                 <span class="viewfinder__corner viewfinder__corner--tr"></span>

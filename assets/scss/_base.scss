@@ -22,6 +22,7 @@ html {
 }
 
 body {
+    counter-reset: section;
     min-height: 100vh;
     color: $ink;
     background: $beige;
@@ -30,6 +31,7 @@ body {
     line-height: 1.6;
     font-weight: 500;
     overflow-x: hidden;
+    overflow-x: clip;
 
     // film grain
     &::after {
@@ -90,10 +92,12 @@ em, i { font-style: italic; }
     display: flex;
     align-items: flex-start;
     gap: 16px;
-    font-size: clamp(40px, 7vw, 88px);
+    font-size: clamp(36px, 6vw, 76px);
     line-height: 1;
     font-weight: 800;
     letter-spacing: -0.03em;
+
+    counter-increment: section;
 
     &__nr {
         flex: none;
@@ -106,6 +110,10 @@ em, i { font-style: italic; }
         font-weight: 700;
         letter-spacing: 0.1em;
         font-variant-numeric: tabular-nums;
+
+        &::before {
+            content: counter(section, decimal-leading-zero);
+        }
     }
 
     &--light {

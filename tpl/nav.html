@@ -1,6 +1,7 @@
 {{- $full := get .Content "full" -}}
-{{- $service := default (copy .Page .Content "service_label") "Gewerke" -}}
+{{- $service := default (copy .Page .Content "service_label") "Leistungen" -}}
 {{- $work := default (copy .Page .Content "work_label") "Referenzen" -}}
+{{- $faq := default (copy .Page .Content "faq_label") "FAQ" -}}
 {{- $contact := default (copy .Page .Content "contact_label") "Kontakt" -}}
 
 <header class="nav{{ if $full }} nav--full{{ end }}" data-component="nav" data-shifu-element="{{ .Content.Position }}">
@@ -18,7 +19,8 @@
         <nav class="nav__links" id="nav-links">
             <a class="nav__link" href="/#service" data-nr="01">{{ $service }}</a>
             <a class="nav__link" href="/#work" data-nr="02">{{ $work }}</a>
-            <a class="nav__link nav__link--cta" href="/#footer" data-nr="03">{{ $contact }}</a>
+            <a class="nav__link" href="/#faq" data-nr="03">{{ $faq }}</a>
+            <a class="nav__link nav__link--cta" href="/#footer" data-nr="04">{{ $contact }}</a>
         </nav>
         {{ end }}
     </div>

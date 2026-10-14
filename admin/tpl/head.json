@@ -2,7 +2,17 @@
     "label": "_HTML Head",
     "layout": true,
     "copy": {
-        "title": { "label": "Title" },
-        "meta_description": { "label": "Meta Description" }
+        "title": { "label": "Title (max. ~60 Zeichen)" },
+        "meta_description": { "label": "Meta Description (max. ~155 Zeichen)" }
+    },
+    "data": {
+        "robots": {
+            "label": "Suchmaschinen",
+            "type": "select",
+            "options": {
+                "index,follow": "Indexieren",
+                "noindex,follow": "Nicht indexieren"
+            }
+        }
     }
 }

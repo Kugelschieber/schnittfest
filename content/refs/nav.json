@@ -1,3 +1,12 @@
 {
-    "tpl": "nav"
+    "tpl": "nav",
+    "copy": {
+        "de": {
+            "service_label": "Leistungen",
+            "work_label": "Referenzen",
+            "faq_label": "FAQ",
+            "contact_label": "Kontakt"
+        }
+    },
+    "content": {}
 }

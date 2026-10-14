@@ -1,0 +1,12 @@
+{{- $question := copy .Page .Content "question" -}}
+{{- $answer := copy .Page .Content "answer" -}}
+
+<details class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question" data-shifu-element="{{ .Content.Position }}">
+    <summary class="faq-item__question">
+        <h3 class="faq-item__title" itemprop="name">{{ default $question "Frage" }}</h3>
+        <span class="faq-item__icon" aria-hidden="true"></span>
+    </summary>
+    <div class="faq-item__answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+        {{ with $answer }}<div itemprop="text">{{ html . }}</div>{{ end }}
+    </div>
+</details>

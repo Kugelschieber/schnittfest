@@ -6,7 +6,7 @@
         "shutdown_time": 30,
         "write_timeout": 5,
         "read_timeout": 5,
-        "hostname": "schnittfest.gmbh",
+        "hostname": "https://schnittfest.gmbh",
         "secure_cookies": false,
         "cookie_domain_name": "schnittfest.gmbh"
     },

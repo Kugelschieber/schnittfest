@@ -2,7 +2,8 @@
     "label": "_Navigation",
     "layout": true,
     "copy": {
-        "service_label": { "label": "Link: Gewerke" },
+        "service_label": { "label": "Link: Leistungen" },
+        "faq_label": { "label": "Link: FAQ" },
         "work_label": { "label": "Link: Referenzen" },
         "contact_label": { "label": "Link: Kontakt" }
     },

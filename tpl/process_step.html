@@ -1,0 +1,9 @@
+{{- $title := copy .Page .Content "title" -}}
+{{- $text := copy .Page .Content "text" -}}
+{{- $color := default (get .Content "color") "yellow" -}}
+
+<li class="frame frame--{{ $color }}" data-component="reveal" data-shifu-element="{{ .Content.Position }}">
+    <span class="frame__nr" aria-hidden="true"></span>
+    {{ with $title }}<h3 class="frame__title">{{ . }}</h3>{{ end }}
+    {{ with $text }}<p class="frame__text">{{ . }}</p>{{ end }}
+</li>
